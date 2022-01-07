@@ -8,5 +8,5 @@
   @apply border border-slate-400 px-5 py-4;
 }
 .news-title{
-  @apply text-left font-semibold text-red-600 text-xl hover:text-blue-500;
+  @apply text-left font-semibold mb-1 text-red-600 text-xl hover:text-blue-500;
 }
