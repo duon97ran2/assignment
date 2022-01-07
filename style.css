@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.nav-item__link{
+  @apply  whitespace-nowrap block py-2 mx-3 text-white hover:underline underline-offset-2;
+}
+.news-item{
+  @apply border border-slate-400 px-5 py-4;
+}
+.news-title{
+  @apply text-left font-semibold text-red-600 text-xl hover:text-blue-500;
+}
