@@ -1,7 +1,10 @@
 import Navigo from "navigo";
 import AboutPage from "./pages/about";
+import ContactPage from "./pages/contact";
+import ForumsPage from "./pages/forums";
 import Homepage from "./pages/home";
-const router = new Navigo("/");
+import NewsPage from "./pages/news";
+const router = new Navigo("/",{linksSelector:"a"});
 // router.on("/",function(){
 //   console.log('Homepage');
 // });
@@ -10,11 +13,20 @@ const render = (content) => {
 };
 router.on(
   {
-    "/": () => {
+    "": () => {
       render(Homepage);
     },
-    "/about": () => {
+    "/tuyen-sinh": () => {
       render(AboutPage);
+    },
+    "/chuong-trinh-dao-tao": () => {
+      render(ContactPage);
+    },
+    "/tuyen-dung": () => {
+      render(NewsPage);
+    },
+    "/goc-sinh-vien": () => {
+      render(ForumsPage);
     }
   }
 )
