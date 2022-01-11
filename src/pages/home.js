@@ -4,19 +4,19 @@ import Header from "../components/header";
 import NewsList from "../components/news";
 
 const Homepage = {
-  print() {
+  render() {
     return ` 
-    ${Header.print()}
+    ${Header.render()}
     <main>
     <div>
-      ${banner.print()}
+      ${banner.render()}
     </div>
     <h1 class="uppercase my-6 text-2xl font-bold">Tin tức học tập</h1>
-    ${NewsList.print()}
+    ${NewsList.render()}
     <h1 class="uppercase my-6 text-2xl font-bold">Hoạt động sinh viên</h1>
-    ${NewsList.print()}
+    ${NewsList.render()}
   </main>
-    ${Footer.print()}
+    ${Footer.render()}
   `;
   }
 }

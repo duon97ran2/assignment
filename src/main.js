@@ -4,29 +4,45 @@ import ContactPage from "./pages/contact";
 import ForumsPage from "./pages/forums";
 import Homepage from "./pages/home";
 import NewsPage from "./pages/news";
+import NewsDetail from "./pages/newsDetail";
+import SignIn from "./pages/signin";
+import SignUp from "./pages/signup";
 const router = new Navigo("/",{linksSelector:"a"});
 // router.on("/",function(){
 //   console.log('Homepage');
 // });
-const render = (content) => {
-  document.getElementById("app").innerHTML = content.print();
+const print = (content) => {
+  document.getElementById("app").innerHTML = content;
 };
 router.on(
   {
     "": () => {
-      render(Homepage);
+      print(Homepage.render());
     },
     "/tuyen-sinh": () => {
-      render(AboutPage);
+      print(AboutPage.render());
     },
     "/chuong-trinh-dao-tao": () => {
-      render(ContactPage);
+      print(ContactPage.render());
     },
     "/tuyen-dung": () => {
-      render(NewsPage);
+      print(NewsPage.render());
+    },
+    "/tuyen-dung/:id": ({data}) => {
+      const {id}=data;
+      print(NewsDetail.render(id));
     },
     "/goc-sinh-vien": () => {
-      render(ForumsPage);
+      print(ForumsPage.render());
+    },
+    "/signin": ()=> {
+      print(SignIn.render());
+    },
+    "/signup": ()=> {
+      print(SignUp.render());
+    },
+    "/admin": ()=> {
+      print(SignUp.render());
     }
   }
 )

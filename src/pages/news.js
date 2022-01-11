@@ -2,8 +2,8 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 const NewsPage = {
-  print(){
-    return `${Header.print()} <h1>Tuyển dụng</h1> ${Footer.print()}`
+  render(){
+    return `${Header.render()} <h1>Tuyển dụng</h1> ${Footer.render()}`
   }
 }
 export default NewsPage;

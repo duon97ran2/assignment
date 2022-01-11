@@ -1,5 +1,5 @@
 const Header = {
-  print(){
+  render(){
     return /*html*/`<header>
     <div class="bg-blue-900 py-4">
       <a href=""><img src="./asset/images/logo.81e2f86a (1).png"  alt="" class="mx-auto  w-40"></a>

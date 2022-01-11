@@ -2,11 +2,11 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 const ForumsPage = {
-  print(){
+  render(){
     return `
-    ${Header.print()}
+    ${Header.render()}
     <h1>Góc sinh viên</h1>
-    ${Footer.print()} 
+    ${Footer.render()} 
     `
   }
 }
