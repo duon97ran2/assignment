@@ -1,4 +1,9 @@
 import Navigo from "navigo";
+import DashBoard from "./admin/dashboard";
+import addNews from "./admin/news/add";
+import newsEdit from "./admin/news/edit";
+import News from "./admin/news/news";
+import notFound from "./pages/404";
 import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import ForumsPage from "./pages/forums";
@@ -41,11 +46,24 @@ router.on(
     "/signup": ()=> {
       print(SignUp.render());
     },
-    "/admin": ()=> {
-      print(SignUp.render());
+    "/admin/dashboard": ()=> {
+      print(DashBoard.render());
+    },
+    "/admin/news": ()=> {
+      print(News.render());
+    },
+    "/admin/news/add": ()=> {
+      print(addNews.render());
+    },
+    "/admin/news/:id/edit": ({data})=> {
+      const {id}=data
+      print(newsEdit.render(id));
     }
   }
 )
+router.notFound(()=>{
+  print(notFound.render());
+})
 router.resolve();
 
 

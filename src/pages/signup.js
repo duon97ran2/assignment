@@ -39,6 +39,14 @@ const SignUp = {
           </button>
         </div>
       </form>
+      <div>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Already has an account?
+          <a href="/signin" class="font-medium text-indigo-600 hover:text-indigo-500">
+            Sign in now
+          </a>
+        </p>
+      </div>
     </div>
   </div>`;
   },
