@@ -1,9 +1,20 @@
+import Nav from "../../components/nav";
 import data from "../../data"
 const newsEdit = {
 
   render(id) {
     const result = data.find((post) => post.id == id);
     return /*html*/`
+    ${Nav.render()}
+    <header class="bg-white shadow mb-7">
+              <div class="max-w-7xl flex justify-between mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">
+                  Edit news
+                </h1>
+                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/news" role="button">News List</a>
+              </div>
+              
+    </header>
 <div>
 <div class="md:grid md:grid-cols-3 md:gap-6">
   <div class="md:col-span-1">
