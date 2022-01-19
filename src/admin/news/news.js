@@ -1,9 +1,8 @@
 import Nav from "../../components/nav";
-import newsData from "../../data";
 
 const News = {
   render() {
-    return /*html*/`
+    return fetch (`https://61e7a9b2e32cd90017acbc21.mockapi.io/news`).then((response)=>response.json()).then((data)=>/*html*/`
     <div class="min-h-full">
     ${Nav.render()}
     <header class="bg-white shadow">
@@ -42,7 +41,7 @@ const News = {
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-              ${newsData.map((post) => /*html*/`
+              ${data.map((post) => /*html*/`
               <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -87,7 +86,8 @@ const News = {
     </div>
             </main>
           </div>
-    `
+    `)
+   
   },
 };
 export default News; 

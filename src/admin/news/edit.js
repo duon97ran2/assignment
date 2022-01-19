@@ -1,10 +1,8 @@
 import Nav from "../../components/nav";
 import data from "../../data"
 const newsEdit = {
-
   render(id) {
-    const result = data.find((post) => post.id == id);
-    return /*html*/`
+    return fetch(`https://61e7a9b2e32cd90017acbc21.mockapi.io/news/${id}`).then((response)=>response.json()).then((result)=>/*html*/`
     ${Nav.render()}
     <header class="bg-white shadow mb-7">
               <div class="max-w-7xl flex justify-between mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -278,7 +276,8 @@ const newsEdit = {
 </div>
 </div>
 
-    `
+    `)
+    
   },
 };
 export default newsEdit;

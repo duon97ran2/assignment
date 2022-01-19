@@ -1,11 +1,9 @@
-import data from "../data"
 const NewsDetail = {
   render(id){
-    const result = data.find((post)=>post.id==id); 
-    return `
-      <h1>${result.title}</h1>
-      <img src="${result.img}"/>
-      <p>${result.desc}</p>    `;
+    return fetch(`https://61e7a9b2e32cd90017acbc21.mockapi.io/news/${id}`).then((response)=>response.json()).then((data)=>`
+    <h1>${data.title}</h1>
+    <img src="${data.img}"/>
+    <p>${data.desc}</p>    `);
   },
 };
 export default NewsDetail;

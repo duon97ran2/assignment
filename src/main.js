@@ -16,53 +16,53 @@ const router = new Navigo("/",{linksSelector:"a"});
 // router.on("/",function(){
 //   console.log('Homepage');
 // });
-const print = (content) => {
-  document.getElementById("app").innerHTML = content;
+const print = async (content,id) => {
+  document.getElementById("app").innerHTML = await content.render(id);
 };
 router.on(
   {
     "": () => {
-      print(Homepage.render());
+      print(Homepage);
     },
     "/tuyen-sinh": () => {
-      print(AboutPage.render());
+      print(AboutPage);
     },
     "/chuong-trinh-dao-tao": () => {
-      print(ContactPage.render());
+      print(ContactPage);
     },
     "/tuyen-dung": () => {
-      print(NewsPage.render());
+      print(NewsPage);
     },
     "/tuyen-dung/:id": ({data}) => {
       const {id}=data;
-      print(NewsDetail.render(id));
+      print(NewsDetail,id);
     },
     "/goc-sinh-vien": () => {
-      print(ForumsPage.render());
+      print(ForumsPage);
     },
     "/signin": ()=> {
-      print(SignIn.render());
+      print(SignIn);
     },
     "/signup": ()=> {
-      print(SignUp.render());
+      print(SignUp);
     },
     "/admin/dashboard": ()=> {
-      print(DashBoard.render());
+      print(DashBoard);
     },
     "/admin/news": ()=> {
-      print(News.render());
+      print(News);
     },
     "/admin/news/add": ()=> {
-      print(addNews.render());
+      print(addNews);
     },
     "/admin/news/:id/edit": ({data})=> {
       const {id}=data
-      print(newsEdit.render(id));
+      print(newsEdit,id);
     }
   }
 )
 router.notFound(()=>{
-  print(notFound.render());
+  print(notFound);
 })
 router.resolve();
 
