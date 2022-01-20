@@ -1,0 +1,56 @@
+{
+  "routes": [
+      {
+          "src": "/",
+          "dest": "/"
+      },
+      {
+          "src": "/tuyen-dung",
+          "dest": "/"
+      },
+      {
+          "src": "/tuyen-dung/(.*)",
+          "dest": "/"
+      },
+      {
+          "src": "/chuong-trinh-dao-tao",
+          "dest": "/"
+      },
+      {
+          "src": "/goc-sinh-vien",
+          "dest": "/"
+      },
+      {
+          "src": "/tuyen-sinh",
+          "dest": "/"
+      },
+      {
+          "src": "/signin",
+          "dest": "/"
+      },
+      {
+          "src": "/signup",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/dashboard",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/news",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/news/add",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/news/edit/(.*)",
+          "dest": "/"
+      },
+      {
+          "src": "/search",
+          "dest": "/"
+      }
+  ]
+}
