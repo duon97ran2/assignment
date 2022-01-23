@@ -1,8 +1,10 @@
+import { getAll, remove } from "../../api/news";
 import Nav from "../../components/nav";
 
 const News = {
-  render() {
-    return fetch (`https://61e7a9b2e32cd90017acbc21.mockapi.io/news`).then((response)=>response.json()).then((data)=>/*html*/`
+  async render() {
+    const { data } = await getAll();
+    return /* html */`
     <div class="min-h-full">
     ${Nav.render()}
     <header class="bg-white shadow">
@@ -41,7 +43,7 @@ const News = {
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-              ${data.map((post) => /*html*/`
+              ${data.map((post) => /* html */`
               <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -72,10 +74,11 @@ const News = {
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                <button data-id="${post.id}" class="btn btn-remove text-indigo-600 hover:text-indigo-900 font-medium">Remove</button>
               </td>
             </tr>
               `).join("")
-            }  
+}  
                <!-- More people... -->
               </tbody>
             </table>
@@ -86,8 +89,25 @@ const News = {
     </div>
             </main>
           </div>
-    `)
-   
+    `;
+  },
+  afterRender() {
+    const buttons = document.querySelectorAll(".btn-remove");
+    console.log(buttons);
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const { id } = button.dataset;
+        const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
+        if (confirm) {
+          remove(id).then(() => {
+            window.alert("Xóa thành công");
+            window.location.reload(true);
+          }).catch(() => {
+            window.alert("Xóa thất bại");
+          });
+        }
+      });
+    });
   },
 };
-export default News; 
+export default News;

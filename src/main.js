@@ -12,12 +12,16 @@ import NewsPage from "./pages/news";
 import NewsDetail from "./pages/newsDetail";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
-const router = new Navigo("/",{linksSelector:"a"});
+
+const router = new Navigo("/", { linksSelector: "a" });
 // router.on("/",function(){
 //   console.log('Homepage');
 // });
-const print = async (content,id) => {
+const print = async (content, id) => {
   document.getElementById("app").innerHTML = await content.render(id);
+  if (content.afterRender) {
+    content.afterRender(id);
+  }
 };
 router.on(
   {
@@ -33,46 +37,38 @@ router.on(
     "/tuyen-dung": () => {
       print(NewsPage);
     },
-    "/tuyen-dung/:id": ({data}) => {
-      const {id}=data;
-      print(NewsDetail,id);
+    "/tuyen-dung/:id": ({ data }) => {
+      const { id } = data;
+      print(NewsDetail, id);
     },
     "/goc-sinh-vien": () => {
       print(ForumsPage);
     },
-    "/signin": ()=> {
+    "/signin": () => {
       print(SignIn);
     },
-    "/signup": ()=> {
+    "/signup": () => {
       print(SignUp);
     },
-    "/admin/dashboard": ()=> {
+    "/admin/dashboard": () => {
       print(DashBoard);
     },
-    "/admin/news": ()=> {
+    "/admin/news": () => {
       print(News);
     },
-    "/admin/news/add": ()=> {
+    "/admin/news/add": () => {
       print(addNews);
     },
-    "/admin/news/:id/edit": ({data})=> {
-      const {id}=data
-      print(newsEdit,id);
-    }
-  }
-)
-router.notFound(()=>{
+    "/admin/news/:id/edit": ({ data }) => {
+      const { id } = data;
+      print(newsEdit, id);
+    },
+  },
+);
+router.notFound(() => {
   print(notFound);
-})
+});
 router.resolve();
-
-
-
-
-
-
-
-
 
 // import './style.css'
 
@@ -102,8 +98,8 @@ router.resolve();
 // class TuongPhep {
 //   constructor(name,congVatLy,congPhep){
 //     this.tenTuong=name;
-//     this.congVatLyTuong=congVatLy; 
-//     this.congPhepTuong=congPhep; 
+//     this.congVatLyTuong=congVatLy;
+//     this.congPhepTuong=congPhep;
 //   }
 //   showInfo(){
 //     console.log(`

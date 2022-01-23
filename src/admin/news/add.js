@@ -1,8 +1,9 @@
+import { add } from "../../api/news";
 import Nav from "../../components/nav";
 
 const addNews = {
   render() {
-    return /*html*/`
+    return /* html */`
     ${Nav.render()}
     <header class="bg-white shadow mb-7">
               <div class="max-w-7xl flex justify-between mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -24,7 +25,7 @@ const addNews = {
     </div>
   </div>
   <div class="mt-5 md:mt-0 md:col-span-2">
-    <form action="#" method="POST">
+    <form action="#" method="POST" id="form-add">
       <div class="shadow sm:rounded-md sm:overflow-hidden">
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
           <div class="grid grid-cols-3 gap-6">
@@ -33,18 +34,18 @@ const addNews = {
                 Name
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
-                <input type="text" name="company-website" id="company-website" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Your name">
+                <input type="text" name="company-website" id="post-name" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Your name">
               </div>
             </div>
             <div class="col-span-3 sm:col-span-2">
               <label for="company-website" class="block text-sm font-medium text-gray-700">
-                Email
+                Images
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                 <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
-                  http://
+                  Img
                 </span>
-                <input type="text" name="company-website" id="company-website" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">
+                <input type="text" name="post-img" id="post-img" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">
               </div>
             </div>
           </div>
@@ -54,7 +55,7 @@ const addNews = {
               Desc
             </label>
             <div class="mt-1">
-              <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+              <textarea id="post-desc" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
             </div>
             <p class="mt-2 text-sm text-gray-500">
               Brief description for your profile. URLs are hyperlinked.
@@ -278,7 +279,22 @@ const addNews = {
 </div>
 </div>
 
-    `
+    `;
+  },
+  afterRender() {
+    const formAdd = document.querySelector("#form-add");
+    formAdd.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const postFake = {
+        title: document.querySelector("#post-name").value,
+        img: document.querySelector("#post-img").value,
+        desc: document.querySelector("#post-desc").value,
+      };
+      add(postFake).then(() => {
+        window.alert("Thêm thành công");
+        window.location.replace("/admin/news");
+      });
+    });
   },
 };
 export default addNews;

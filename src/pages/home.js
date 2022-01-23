@@ -18,6 +18,6 @@ const Homepage = {
   </main>
     ${Footer.render()}
   `;
-  }
-}
+  },
+};
 export default Homepage;

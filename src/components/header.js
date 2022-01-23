@@ -1,6 +1,6 @@
 const Header = {
-  render(){
-    return /*html*/`<header>
+  render() {
+    return /* html */`<header>
     <div class="bg-orange-600 flex justify-end">
       <ul class="flex">
         <li><a href="/signin" class="nav-item__link">Đăng nhập</a></li>
@@ -25,6 +25,6 @@ const Header = {
       <button class="bg-blue-900 border border-white text-white px-3 my-2">Tìm kiếm</button>
     </div>
   </header>`;
-  }
-}
+  },
+};
 export default Header;

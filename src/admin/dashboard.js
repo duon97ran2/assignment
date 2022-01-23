@@ -2,7 +2,7 @@ import Nav from "../components/nav";
 
 const DashBoard = {
   render() {
-    return /*html*/`
+    return /* html */`
           <div class="min-h-full">
             ${Nav.render()}
             <header class="bg-white shadow">
@@ -23,7 +23,7 @@ const DashBoard = {
             </main>
           </div>
 
-          `
+          `;
   },
 };
 export default DashBoard;

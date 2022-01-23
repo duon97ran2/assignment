@@ -1,6 +1,6 @@
-const notFound ={
-  render(){
-    return`<div
+const notFound = {
+  render() {
+    return `<div
     class="
       flex
       items-center
@@ -25,13 +25,13 @@ const notFound ={
         </p>
   
         <a
-          href="#"
+          href="/"
           class="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100"
           >Go home</a
         >
       </div>
     </div>
-  </div>`
+  </div>`;
   },
 };
 export default notFound;

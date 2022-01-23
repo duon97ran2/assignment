@@ -1,9 +1,11 @@
 // import { data } from "autoprefixer";
 
+import { getAll } from "../api/news";
+
 const NewsList = {
-  render() {
-    return fetch('https://61e7a9b2e32cd90017acbc21.mockapi.io/news').then((response) => response.json()).then((data) => 
-      `
+  async render() {
+    const { data } = await getAll();
+    return /* html */`
     <div class="grid grid-cols-3 gap-6">
     ${data.map((post) => `
     <div class=" news-item">
@@ -13,7 +15,7 @@ const NewsList = {
     </div>
     `).join("")}
     </div>
-    `)
-  }
-}
+    `;
+  },
+};
 export default NewsList;

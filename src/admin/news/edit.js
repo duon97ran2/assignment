@@ -1,8 +1,10 @@
+import { get, update } from "../../api/news";
 import Nav from "../../components/nav";
-import data from "../../data"
+
 const newsEdit = {
-  render(id) {
-    return fetch(`https://61e7a9b2e32cd90017acbc21.mockapi.io/news/${id}`).then((response)=>response.json()).then((result)=>/*html*/`
+  async render(id) {
+    const { data } = await get(id);
+    return /* html */`
     ${Nav.render()}
     <header class="bg-white shadow mb-7">
               <div class="max-w-7xl flex justify-between mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -24,7 +26,7 @@ const newsEdit = {
     </div>
   </div>
   <div class="mt-5 md:mt-0 md:col-span-2">
-    <form action="#" method="POST">
+    <form action="#" id="form-update" method="POST">
       <div class="shadow sm:rounded-md sm:overflow-hidden">
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
           <div class="grid grid-cols-3 gap-6">
@@ -33,18 +35,18 @@ const newsEdit = {
                 Name
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
-                <input type="text" name="company-website" id="company-website" value="${result.title}" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Your name">
+                <input type="text" name="company-website" id="post-name" value="${data.title}" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Your name">
               </div>
             </div>
             <div class="col-span-3 sm:col-span-2">
               <label for="company-website" class="block text-sm font-medium text-gray-700">
-                Email
+                Images
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                 <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
-                  http://
+                  Img
                 </span>
-                <input type="text" name="company-website" id="company-website" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">
+                <input type="text" name="company-website" id="post-img" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">
               </div>
             </div>
           </div>
@@ -54,7 +56,7 @@ const newsEdit = {
               Desc
             </label>
             <div class="mt-1">
-              <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${result.desc}</textarea>
+              <textarea id="post-desc" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${data.desc}</textarea>
             </div>
             <p class="mt-2 text-sm text-gray-500">
               Brief description for your profile. URLs are hyperlinked.
@@ -67,7 +69,7 @@ const newsEdit = {
             </label>
             <div class="mt-1 flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
-              <img class="h-10 w-10 rounded-full" src="${result.img}" alt="">
+              <img class="h-10 w-10 rounded-full" src="${data.img}" alt="">
               </div>
               <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Change
@@ -276,8 +278,22 @@ const newsEdit = {
 </div>
 </div>
 
-    `)
-    
+    `;
+  },
+  afterRender(id) {
+    const formAdd = document.querySelector("#form-update");
+    formAdd.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const postUpdate = {
+        title: document.querySelector("#post-name").value,
+        img: document.querySelector("#post-img").value,
+        desc: document.querySelector("#post-desc").value,
+      };
+      update(postUpdate, id).then(() => {
+        window.alert("Cập nhật thành công");
+        window.location.replace("/admin/news");
+      });
+    });
   },
 };
 export default newsEdit;
