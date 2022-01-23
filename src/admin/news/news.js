@@ -1,5 +1,8 @@
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 import { getAll, remove } from "../../api/news";
 import Nav from "../../components/nav";
+// import { reRender } from "../../utils/rerender";
 
 const News = {
   async render() {
@@ -17,12 +20,12 @@ const News = {
               
     </header>
     <main>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" >
     <div class="flex flex-col">
       <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table class="min-w-full divide-y divide-gray-200">
+            <table class="min-w-full divide-y divide-gray-200" id="table-post">
               <thead class="bg-gray-50">
                 <tr>
                   <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -93,19 +96,33 @@ const News = {
   },
   afterRender() {
     const buttons = document.querySelectorAll(".btn-remove");
-    console.log(buttons);
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         const { id } = button.dataset;
-        const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
-        if (confirm) {
-          remove(id).then(() => {
-            window.alert("Xóa thành công");
-            window.location.reload(true);
-          }).catch(() => {
-            window.alert("Xóa thất bại");
-          });
-        }
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            remove(id).then(() => {
+              Swal.fire(
+                "Deleted!",
+                "Your file has been deleted.",
+                "success",
+              );
+              window.location.reload(true);
+              // reRender(News, "#table-post");
+            }).catch(() => {
+              window.alert("Xóa thất bại");
+              window.location.reload(true);
+            });
+          }
+        });
       });
     });
   },

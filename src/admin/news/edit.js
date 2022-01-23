@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 import { get, update } from "../../api/news";
 import Nav from "../../components/nav";
 
@@ -46,7 +48,7 @@ const newsEdit = {
                 <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                   Img
                 </span>
-                <input type="text" name="company-website" id="post-img" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">
+                <input type="text" name="company-website" id="post-img" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" value="${data.img}" placeholder="www.example.com">
               </div>
             </div>
           </div>
@@ -290,8 +292,19 @@ const newsEdit = {
         desc: document.querySelector("#post-desc").value,
       };
       update(postUpdate, id).then(() => {
-        window.alert("Cập nhật thành công");
+        Swal.fire({
+          icon: "success",
+          title: "Thành công",
+          text: "Đã cập nhật bài viết!",
+        });
         window.location.replace("/admin/news");
+      }).catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Thất bại",
+          text: "Chưa thể cập nhật bài viết!",
+        });
+        window.location.reload(true);
       });
     });
   },

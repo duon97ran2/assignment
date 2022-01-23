@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 import { add } from "../../api/news";
 import Nav from "../../components/nav";
 
@@ -291,8 +293,19 @@ const addNews = {
         desc: document.querySelector("#post-desc").value,
       };
       add(postFake).then(() => {
-        window.alert("Thêm thành công");
+        Swal.fire({
+          icon: "success",
+          title: "Thành công",
+          text: "Đã thêm bài viết!",
+        });
         window.location.replace("/admin/news");
+      }).catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Thất bại",
+          text: "Chưa thể thêm bài viết!",
+        });
+        window.location.reload(true);
       });
     });
   },
