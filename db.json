@@ -1,178 +1,228 @@
 {
-  "post" : [
-  {
-    "createdAt": "2022-01-15T01:54:24.955Z",
-    "title": "Tiffany Wisoky",
-    "img": "http://placeimg.com/640/480/cats",
-    "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-    "id": "8"
-  },
-  {
-    "createdAt": "2022-01-15T02:36:13.715Z",
-    "title": "Mr. Doug Purdy",
-    "img": "http://placeimg.com/640/480/nature",
-    "desc": "The Football Is Good For Training And Recreational Purposes",
-    "id": "9"
-  },
-  {
-    "createdAt": "2022-01-14T12:38:27.738Z",
-    "title": "bài viết này được đổi",
-    "img": "http://placeimg.com/640/480/nature",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "id": "10"
-  },
-  {
-    "createdAt": "2022-01-14T17:58:26.446Z",
-    "title": "Vickie Jast",
-    "img": "http://placeimg.com/640/480/technics",
-    "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-    "id": "11"
-  },
-  {
-    "createdAt": "2022-01-15T02:21:11.908Z",
-    "title": "Mrs. Drew Farrell",
-    "img": "http://placeimg.com/640/480/fashion",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "id": "13"
-  },
-  {
-    "createdAt": "2022-01-14T11:14:02.843Z",
-    "title": "Lorena Cole",
-    "img": "http://placeimg.com/640/480/technics",
-    "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-    "id": "14"
-  },
-  {
-    "createdAt": "2022-01-15T00:11:58.958Z",
-    "title": "Vừa sửa",
-    "img": "http://placeimg.com/640/480/technics",
-    "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-    "id": "15"
-  },
-  {
-    "createdAt": "2022-01-15T04:39:49.775Z",
-    "title": "anh dep trai so 2 khong ai so 1",
-    "img": "http://placeimg.com/640/480/people",
-    "desc": "day la mo ta",
-    "id": "16"
-  },
-  {
-    "createdAt": "2022-01-10T20:33:27.477Z",
-    "title": "Yolanda Roob",
-    "img": "http://placeimg.com/640/480/sports",
-    "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-    "id": "19"
-  },
-  {
-    "0": {
+  "post": [
+    {
+      "createdAt": "2022-01-15T01:54:24.955Z",
+      "title": "Tiffany Wisoky",
+      "img": "http://placeimg.com/640/480/cats",
+      "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "id": "8"
+    },
+    {
+      "createdAt": "2022-01-15T02:36:13.715Z",
+      "title": "Mr. Doug Purdy",
+      "img": "http://placeimg.com/640/480/nature",
+      "desc": "The Football Is Good For Training And Recreational Purposes",
+      "id": "9"
+    },
+    {
+      "createdAt": "2022-01-14T12:38:27.738Z",
+      "title": "bài viết này được đổi",
+      "img": "http://placeimg.com/640/480/nature",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "10"
+    },
+    {
+      "createdAt": "2022-01-14T17:58:26.446Z",
+      "title": "Vickie Jast",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "11"
+    },
+    {
+      "createdAt": "2022-01-15T02:21:11.908Z",
+      "title": "Mrs. Drew Farrell",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "13"
+    },
+    {
+      "createdAt": "2022-01-14T11:14:02.843Z",
+      "title": "Lorena Cole",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+      "id": "14"
+    },
+    {
+      "createdAt": "2022-01-15T00:11:58.958Z",
+      "title": "Vừa sửa",
+      "img": "http://placeimg.com/640/480/technics",
+      "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+      "id": "15"
+    },
+    {
+      "createdAt": "2022-01-15T04:39:49.775Z",
+      "title": "anh dep trai so 2 khong ai so 1",
+      "img": "http://placeimg.com/640/480/people",
+      "desc": "day la mo ta",
+      "id": "16"
+    },
+    {
       "createdAt": "2022-01-10T20:33:27.477Z",
-      "title": "Bài viết mới",
+      "title": "Yolanda Roob",
       "img": "http://placeimg.com/640/480/sports",
       "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-      "id": "2"
+      "id": "19"
     },
-    "createdAt": "2022-01-18T23:32:25.238Z",
-    "title": "Bennie Moore",
-    "img": "http://placeimg.com/640/480/sports",
-    "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-    "id": "21"
-  },
-  {
-    "createdAt": "2022-01-18T09:17:36.448Z",
-    "title": "David Beahan",
-    "img": "http://placeimg.com/640/480/cats",
-    "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-    "id": "22"
-  },
-  {
-    "createdAt": "2022-01-18T19:58:18.894Z",
-    "title": "Erin Herman",
-    "img": "http://placeimg.com/640/480/fashion",
-    "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-    "id": "23"
-  },
-  {
-    "createdAt": "2022-01-18T19:25:18.728Z",
-    "title": "Genevieve Upton II",
-    "img": "http://placeimg.com/640/480/cats",
-    "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-    "id": "25"
-  },
-  {
-    "0": {
-      "createdAt": "2022-01-10T20:33:27.477Z",
-      "title": "Bài viết mới frreewrertr",
+    {
+      "0": {
+        "createdAt": "2022-01-10T20:33:27.477Z",
+        "title": "Bài viết mới",
+        "img": "http://placeimg.com/640/480/sports",
+        "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+        "id": "2"
+      },
+      "createdAt": "2022-01-18T23:32:25.238Z",
+      "title": "Bennie Moore",
       "img": "http://placeimg.com/640/480/sports",
-      "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-      "id": "2"
+      "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+      "id": "21"
     },
-    "createdAt": "2022-01-18T12:48:44.521Z",
-    "title": "Martha Bauch",
-    "img": "http://placeimg.com/640/480/people",
-    "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-    "id": "27"
-  },
-  {
-    "createdAt": "2022-01-19T01:45:11.910Z",
-    "title": "Trần Văn Kiên",
-    "img": "https://picsum.photos/1500/400",
-    "desc": "Chú thích người dùng",
-    "id": "29"
-  },
-  {
-    "createdAt": "2022-01-18T08:16:02.361Z",
-    "title": "Thêm mới bài viết",
-    "img": "http://placeimg.com/640/480/business",
-    "desc": "Bài viêt mới đăng",
-    "id": "31"
-  },
-  {
-    "createdAt": "2022-01-18T22:06:44.377Z",
-    "title": "Long chanh thôn đã chỉnh sửa",
-    "img": "http://placeimg.com/640/480/fashion",
-    "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-    "id": "32"
-  },
-  {
-    "createdAt": "2022-01-19T02:20:42.280Z",
-    "title": "Lê Văn Tuân Update",
-    "img": "http://placeimg.com/640/480/transport",
-    "desc": "Mô tả bài viết",
-    "id": "35"
-  },
-  {
-    "createdAt": "2022-01-10T07:26:52.549Z",
-    "title": "Annie Stroman",
-    "img": "http://placeimg.com/640/480/fashion",
-    "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-    "id": "36"
-  },
-  {
-    "createdAt": "2022-01-18T18:18:10.403Z",
-    "title": "Rodney Brakus",
-    "img": "http://placeimg.com/640/480/fashion",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "id": "37"
-  },
-  {
-    "createdAt": "2022-01-15T01:54:24.955Z",
-    "title": "Tiffany Wisoky",
-    "img": "http://placeimg.com/640/480/cats",
-    "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-    "id": "38"
-  },
-  {
-    "createdAt": "2022-01-15T01:54:24.955Z",
-    "title": "Tiffany Wisoky",
-    "img": "http://placeimg.com/640/480/cats",
-    "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-    "id": "39"
-  },
-  {
-    "createdAt": "2022-01-19T19:07:46.337Z",
-    "title": "Đặng Đình Khải",
-    "img": "http://placeimg.com/640/480/sports",
-    "desc": "Content description!",
-    "id": "40"
-  }
-]}
+    {
+      "createdAt": "2022-01-18T09:17:36.448Z",
+      "title": "David Beahan",
+      "img": "http://placeimg.com/640/480/cats",
+      "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+      "id": "22"
+    },
+    {
+      "createdAt": "2022-01-18T19:58:18.894Z",
+      "title": "Erin Herman",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+      "id": "23"
+    },
+    {
+      "createdAt": "2022-01-18T19:25:18.728Z",
+      "title": "Genevieve Upton II",
+      "img": "http://placeimg.com/640/480/cats",
+      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "id": "25"
+    },
+    {
+      "0": {
+        "createdAt": "2022-01-10T20:33:27.477Z",
+        "title": "Bài viết mới frreewrertr",
+        "img": "http://placeimg.com/640/480/sports",
+        "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+        "id": "2"
+      },
+      "createdAt": "2022-01-18T12:48:44.521Z",
+      "title": "Martha Bauch",
+      "img": "http://placeimg.com/640/480/people",
+      "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "id": "27"
+    },
+    {
+      "createdAt": "2022-01-19T01:45:11.910Z",
+      "title": "Trần Văn Kiên",
+      "img": "https://picsum.photos/1500/400",
+      "desc": "Chú thích người dùng",
+      "id": "29"
+    },
+    {
+      "createdAt": "2022-01-18T08:16:02.361Z",
+      "title": "Thêm mới bài viết",
+      "img": "http://placeimg.com/640/480/business",
+      "desc": "Bài viêt mới đăng",
+      "id": "31"
+    },
+    {
+      "createdAt": "2022-01-18T22:06:44.377Z",
+      "title": "Long chanh thôn đã chỉnh sửa",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+      "id": "32"
+    },
+    {
+      "createdAt": "2022-01-19T02:20:42.280Z",
+      "title": "Lê Văn Tuân Update",
+      "img": "http://placeimg.com/640/480/transport",
+      "desc": "Mô tả bài viết",
+      "id": "35"
+    },
+    {
+      "createdAt": "2022-01-10T07:26:52.549Z",
+      "title": "Annie Stroman",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "36"
+    },
+    {
+      "createdAt": "2022-01-18T18:18:10.403Z",
+      "title": "Rodney Brakus",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "37"
+    },
+    {
+      "createdAt": "2022-01-15T01:54:24.955Z",
+      "title": "Tiffany Wisoky",
+      "img": "http://placeimg.com/640/480/cats",
+      "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+      "id": "39"
+    },
+    {
+      "createdAt": "2022-01-19T19:07:46.337Z",
+      "title": "Đặng Đình Khải",
+      "img": "http://placeimg.com/640/480/sports",
+      "desc": "Content description!",
+      "id": "40"
+    },
+    {
+      "title": "duong",
+      "img": "dasdasd",
+      "desc": "asdadasdasd",
+      "id": "VIPpF0I"
+    },
+    {
+      "title": "duong",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644300464/assigmentJS/fnkwj4eqonqbqdxlovcd.png",
+      "desc": "ddddddddd",
+      "id": "X1ugL9R"
+    },
+    {
+      "title": "duong",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644300517/assigmentJS/f2nk1alzqh5ixhanozps.png",
+      "desc": "dddddddddd",
+      "id": "CGBAp_Y"
+    }
+  ],
+  "users": [
+    {
+      "email": "manutd0097@gmail.com",
+      "password": "$2a$10$Q6ItVvDOZTYLiCV47ZX.ZOxTTdftBb7sdyPSjbpNtTXgkUJ5OR5m.",
+      "username": "datlt",
+      "id": 1
+    },
+    {
+      "email": "manutd00974@gmail.com",
+      "password": "$2a$10$mJnrZd2xUCWF5XqbhLvQvOWrJKI90a.2LfzKg35pcEejhf4KUDvDG",
+      "username": "d",
+      "id": 2
+    },
+    {
+      "email": "manutd0034@gmail.com",
+      "password": "$2a$10$5BblfCG2i0mjGh543DXgoeoXYJTOmdSUYIWh4ZLVtUJVjzvd6C2Eq",
+      "username": "dddddddddddd",
+      "id": 3
+    },
+    {
+      "email": "manutd009d7@gmail.com",
+      "password": "$2a$10$UUraiJLEgePESntxBlNhke9DbKgQc0Oplb2g5NS.xxBxa3QOQgH/m",
+      "username": "ddddddddddd",
+      "id": 4
+    },
+    {
+      "email": "duongtaph13276@fpt.edu.vn",
+      "password": "$2a$10$xM.bFlJSl0t9QoTfnP/FNeGTlPCdw9npYlNWL8t04KdVXIwobYx5W",
+      "username": "123456",
+      "id": 5
+    },
+    {
+      "email": "duongtaph1376@fpt.edu.vn",
+      "password": "$2a$10$DmmgnF0vuO7/YIb5X8ju.exJbWaBdHTqwUEZi6vEPucu0nFiEJdnC",
+      "username": "12345633",
+      "id": 6
+    }
+  ]
+}

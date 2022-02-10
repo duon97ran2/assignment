@@ -1,3 +1,5 @@
+import { signup } from "../api/users";
+
 const SignUp = {
   render() {
     return /* html */`
@@ -6,23 +8,23 @@ const SignUp = {
       <div>
         <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Registration
+          Đăng ký tài khoản
         </h2>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <form class="mt-8 space-y-6" action="#" id="sign-up" method="POST">
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
-            <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+            <label for="email-address" class="sr-only">Địa chỉ email</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập địa chỉ email">
           </div>
           <div>
-            <label for="password" class="sr-only">Password</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            <label for="username" class="sr-only">Tên đăng nhập</label>
+            <input id="username" name="username" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập tên đăng nhập">
           </div>
           <div>
-            <label for="password" class="sr-only">Confirm Password</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm password">
+            <label for="password" class="sr-only">Mật khẩu</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập mật khẩu">
           </div>
         </div>
   
@@ -35,20 +37,36 @@ const SignUp = {
                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
               </svg>
             </span>
-            Sign up
+            Đăng ký
           </button>
         </div>
       </form>
       <div>
         <p class="mt-2 text-center text-sm text-gray-600">
-          Already has an account?
+          Đã có tài khoản?
           <a href="/signin" class="font-medium text-indigo-600 hover:text-indigo-500">
-            Sign in now
+            Đăng nhập ngay
           </a>
         </p>
       </div>
     </div>
   </div>`;
+  },
+  afterRender() {
+    const signUp = document.querySelector("#sign-up");
+    signUp.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      try {
+        const data = await signup({
+          username: document.querySelector("#username").value,
+          email: document.querySelector("#email-address").value,
+          password: document.querySelector("#password").value,
+        });
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    });
   },
 };
 export default SignUp;
