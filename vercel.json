@@ -45,7 +45,35 @@
           "dest": "/"
       },
       {
-          "src": "/admin/news/edit/(.*)",
+          "src": "/admin/news/(.*)/edit",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/products",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/products/add",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/products/(.*)/edit",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/categories",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/users",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/users/add",
+          "dest": "/"
+      },
+      {
+          "src": "/admin/users/(.*)/edit",
           "dest": "/"
       },
       {

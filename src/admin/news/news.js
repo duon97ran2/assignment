@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { getAll, remove } from "../../api/news";
+import adHeader from "../../components/adheader";
 import Nav from "../../components/nav";
 // import { reRender } from "../../utils/rerender";
 
@@ -10,15 +11,7 @@ const News = {
     return /* html */`
     <div class="min-h-full">
     ${Nav.render()}
-    <header class="bg-white shadow">
-              <div class="max-w-7xl flex justify-between mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold text-gray-900">
-                  News
-                </h1>
-                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/news/add" role="button">Add News</a>
-              </div>
-              
-    </header>
+    ${adHeader.render()}
     <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" >
     <div class="flex flex-col">

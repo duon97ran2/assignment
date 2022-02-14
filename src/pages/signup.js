@@ -1,4 +1,6 @@
+import toastr from "toastr";
 import { signup } from "../api/users";
+import "toastr/build/toastr.min.css";
 
 const SignUp = {
   render() {
@@ -61,10 +63,14 @@ const SignUp = {
           username: document.querySelector("#username").value,
           email: document.querySelector("#email-address").value,
           password: document.querySelector("#password").value,
+          role: "member",
         });
-        console.log(data);
+        if (data) {
+          toastr.success("Đăng ký tài khoản thành công");
+          document.location.href = "/signin";
+        }
       } catch (error) {
-        console.log(error);
+        toastr.error(error.response.data);
       }
     });
   },

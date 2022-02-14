@@ -1,4 +1,6 @@
+import toastr from "toastr";
 import { signin } from "../api/users";
+import "toastr/build/toastr.min.css";
 
 const SignIn = {
   render() {
@@ -61,17 +63,27 @@ const SignIn = {
   </div>`;
   },
   afterRender() {
-    const signIn = document.querySelector("#sign-in");
-    signIn.addEventListener("submit", async (e) => {
+    const formSignIn = document.querySelector("#sign-in");
+    formSignIn.addEventListener("submit", async (e) => {
       e.preventDefault();
       try {
-        const data = await signin({
+        const { data } = await signin({
           email: document.querySelector("#email-address").value,
           password: document.querySelector("#password").value,
         });
-        console.log(data);
+        if (data) {
+          localStorage.setItem("user", JSON.stringify(data.user));
+          toastr.success("Đăng nhập thành công");
+          setTimeout(() => {
+            if (data.user.role === "admin") {
+              document.location.href = "/admin/dashboard";
+            } else {
+              document.location.href = "/";
+            }
+          }, 2000);
+        }
       } catch (error) {
-        console.log(error);
+        toastr.error(error.response.data);
       }
     });
   },

@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .nav-item__link{
   @apply  whitespace-nowrap block py-2 mx-3 text-white hover:underline underline-offset-2;
 }
@@ -12,4 +17,34 @@
 }
 .active{
   @apply bg-gray-900;
+}
+.logo{
+  @apply text-white font-bold text-3xl inline-block align-middle
+}
+.menu__bar{
+  @apply bg-transparent flex w-full justify-between absolute top-0 p-3 box-border 
+}
+header{
+  @apply relative
+}
+.menu__bar ul li a{
+  @apply px-3
+}
+.menu__bar ul li a:hover{
+  @apply no-underline
+}
+.sub-menu{
+  @apply opacity-0 bg-white text-black text-center top-full relative rounded-xl w-[100px] mt-[5px]
+}
+.nav-item__link{
+  @apply transition rounded-[20px] ease-in-out duration-150
+}
+.dropdown:hover .sub-menu{
+  @apply opacity-100
+}
+.nav-item__link:hover{
+  @apply scale-125 ease-in-out duration-500 text-orange-500
+}
+.square {
+  @apply absolute top-[-6px] left-1/2 w-[12px] h-[12px] border-t-[rgba(0,0,0,.15)] border-l-[rgba(0,0,0,.15)] bg-white rotate-45 translate-x-[-50%]
 }

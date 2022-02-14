@@ -92,8 +92,8 @@ const newsEdit = {
     `;
   },
   afterRender(id) {
-    const formAdd = document.querySelector("#form-update");
-    formAdd.addEventListener("submit", (e) => {
+    const formUpdate = document.querySelector("#form-update");
+    formUpdate.addEventListener("submit", (e) => {
       e.preventDefault();
       const postUpdate = {
         title: document.querySelector("#post-name").value,

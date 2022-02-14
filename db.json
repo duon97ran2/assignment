@@ -185,44 +185,125 @@
       "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644300517/assigmentJS/f2nk1alzqh5ixhanozps.png",
       "desc": "dddddddddd",
       "id": "CGBAp_Y"
+    },
+    {
+      "title": "duong",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644643554/assigmentJS/jlsmybfqw3luq2do4shr.png",
+      "desc": "dddddddddddddd",
+      "id": "fy-xDJV"
+    },
+    {
+      "title": "123123",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644811415/assigmentJS/sinxtf2y0p8jfugq8qho.png",
+      "desc": "ưqeqwe",
+      "id": "Z9C4cjy"
     }
   ],
   "users": [
     {
       "email": "manutd0097@gmail.com",
       "password": "$2a$10$Q6ItVvDOZTYLiCV47ZX.ZOxTTdftBb7sdyPSjbpNtTXgkUJ5OR5m.",
-      "username": "datlt",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644850759/assigmentJS/nba6lot8ba2te1yan6uo.png",
+      "username": "duong",
+      "role": "admin",
       "id": 1
     },
     {
       "email": "manutd00974@gmail.com",
       "password": "$2a$10$mJnrZd2xUCWF5XqbhLvQvOWrJKI90a.2LfzKg35pcEejhf4KUDvDG",
       "username": "d",
+      "role": "member",
       "id": 2
     },
     {
       "email": "manutd0034@gmail.com",
       "password": "$2a$10$5BblfCG2i0mjGh543DXgoeoXYJTOmdSUYIWh4ZLVtUJVjzvd6C2Eq",
       "username": "dddddddddddd",
+      "role": "member",
       "id": 3
     },
     {
       "email": "manutd009d7@gmail.com",
       "password": "$2a$10$UUraiJLEgePESntxBlNhke9DbKgQc0Oplb2g5NS.xxBxa3QOQgH/m",
       "username": "ddddddddddd",
+      "role": "member",
       "id": 4
     },
     {
-      "email": "duongtaph13276@fpt.edu.vn",
-      "password": "$2a$10$xM.bFlJSl0t9QoTfnP/FNeGTlPCdw9npYlNWL8t04KdVXIwobYx5W",
-      "username": "123456",
-      "id": 5
+      "email": "admin@gmail.com",
+      "password": "$2a$10$9JChT6X/XzFO7USG6QtDyOUoTFY/ex9h2XOK1EIKiao3DA8C7TbJe",
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "role": "admin",
+      "id": 7
     },
     {
-      "email": "duongtaph1376@fpt.edu.vn",
-      "password": "$2a$10$DmmgnF0vuO7/YIb5X8ju.exJbWaBdHTqwUEZi6vEPucu0nFiEJdnC",
-      "username": "12345633",
-      "id": 6
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$8spvr1o1tL8oqJzX6gNUW.1c.hepjd9sH8bPwSAxA74.H6HJY8wWq",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "username": "duong",
+      "role": "admin",
+      "id": 10
+    }
+  ],
+  "products": [
+    {
+      "name": "Akko B414",
+      "image": "https://picsum.photos/1000/1000",
+      "price": "2000000",
+      "quantity": "5",
+      "cateId": "1",
+      "desc": "undefined",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Akko B415",
+      "price": "2000000",
+      "quantity": "7",
+      "image": "https://picsum.photos/1000/1000",
+      "cateId": "2"
+    },
+    {
+      "name": "ban phim2",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644814661/assigmentJS/zopzekfiehjxguyw8luc.png",
+      "price": "2000",
+      "quantity": "2",
+      "cateId": "1",
+      "desc": "dasdasd",
+      "id": 3
+    },
+    {
+      "name": "edra 5000",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644829555/assigmentJS/je9aqwzjflj8s1zwa0fi.png",
+      "price": "1000",
+      "quantity": "3",
+      "cateId": "2",
+      "desc": "ddd",
+      "id": 4
+    },
+    {
+      "name": "ban phim7",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644829617/assigmentJS/dqtxnnksw7ufegruy3jj.png",
+      "price": "2000",
+      "quantity": "2",
+      "cateId": "1",
+      "desc": "ddddddddd",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Akko"
+    },
+    {
+      "id": 2,
+      "name": "Leopold"
+    },
+    {
+      "name": "Edra",
+      "id": 3
     }
   ]
 }
