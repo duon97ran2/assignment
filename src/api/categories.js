@@ -20,3 +20,7 @@ export const removeCategory = (id) => {
   const url = `/categories/${id}`;
   return instance.delete(url);
 };
+export const getCategoryProducts = (id) => {
+  const url = `/categories/${id}?_embed=products`;
+  return instance.get(url);
+};

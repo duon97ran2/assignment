@@ -9,7 +9,7 @@ const editProducts = {
   async loadSelectCate(productData) {
     const { data } = await getAllCategories();
     return data.length > 0 ? data.map((cate) => `
-      <option value="${cate.id}" ${productData.data.cateId == cate.id ? "selected" : ""}>${cate.name}</option>
+      <option value="${cate.id}" ${productData.data.categoryId == cate.id ? "selected" : ""}>${cate.name}</option>
   `) : "";
   },
   async render(id) {
@@ -145,7 +145,7 @@ const editProducts = {
         image: updateImg,
         price: document.querySelector("#price").value,
         quantity: document.querySelector("#quantity").value,
-        cateId: document.querySelector("#category_id").value,
+        categoryId: +document.querySelector("#category_id").value,
         desc: document.querySelector("#post-desc").value,
       };
       updateProduct(newProduct, id).then(() => {

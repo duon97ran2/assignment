@@ -5,11 +5,11 @@
           "dest": "/"
       },
       {
-          "src": "/tuyen-dung",
+          "src": "/tin-tuc",
           "dest": "/"
       },
       {
-          "src": "/tuyen-dung/(.*)",
+          "src": "/tin-tuc/(.*)",
           "dest": "/"
       },
       {
@@ -21,7 +21,7 @@
           "dest": "/"
       },
       {
-          "src": "/tuyen-sinh",
+          "src": "/san-pham",
           "dest": "/"
       },
       {

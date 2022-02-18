@@ -138,7 +138,7 @@ const addProducts = {
         image: data.url,
         price: document.querySelector("#price").value,
         quantity: document.querySelector("#quantity").value,
-        cateId: document.querySelector("#category_id").value,
+        categoryId: +document.querySelector("#category_id").value,
         desc: document.querySelector("#post-desc").value,
       };
       addProduct(newProduct).then(() => {

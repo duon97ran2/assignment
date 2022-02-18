@@ -10,7 +10,7 @@ const productTable = {
     const categoriesData = await getAllCategories();
     const products = data.map((product) => {
       categoriesData.data.map((category) => {
-        if (product.cateId == category.id) {
+        if (product.categoryId == category.id) {
           product.category = category.name;
         }
       });

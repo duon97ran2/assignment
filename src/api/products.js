@@ -20,3 +20,7 @@ export const removeProduct = (id) => {
   const url = `/products/${id}`;
   return instance.delete(url);
 };
+export const searchProduct = (keyword) => {
+  const url = `/products?q=${keyword}`;
+  return instance.get(url);
+};

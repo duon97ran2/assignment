@@ -7,7 +7,6 @@ import newsEdit from "./admin/news/edit";
 import News from "./admin/news/news";
 import productList from "./admin/products/list";
 import notFound from "./pages/404";
-import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import ForumsPage from "./pages/forums";
 import Homepage from "./pages/home";
@@ -19,8 +18,11 @@ import editProducts from "./admin/products/edit";
 import userList from "./admin/users/list";
 import addUsers from "./admin/users/add";
 import editUsers from "./admin/users/edit";
+import productDetail from "./pages/productDetail";
+import cartList from "./pages/cart";
+import productPage from "./pages/product";
 
-const router = new Navigo("/", { linksSelector: "a" });
+const router = new Navigo("/", { linksSelector: "a", hash: true });
 // router.on("/",function(){
 //   console.log('Homepage');
 // });
@@ -50,18 +52,25 @@ router.on(
     "": () => {
       print(Homepage);
     },
-    "/tuyen-sinh": () => {
-      print(AboutPage);
+    "/san-pham": () => {
+      print(productPage);
     },
     "/chuong-trinh-dao-tao": () => {
       print(ContactPage);
     },
-    "/tuyen-dung": () => {
+    "/tin-tuc": () => {
       print(NewsPage);
     },
-    "/tuyen-dung/:id": ({ data }) => {
+    "/tin-tuc/:id": ({ data }) => {
       const { id } = data;
       print(NewsDetail, id);
+    },
+    "/productDetail/:id": ({ data }) => {
+      const { id } = data;
+      print(productDetail, id);
+    },
+    "/cart": () => {
+      print(cartList);
     },
     "/goc-sinh-vien": () => {
       print(ForumsPage);

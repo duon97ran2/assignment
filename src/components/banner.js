@@ -1,7 +1,7 @@
 const banner = {
   render() {
     return `
-      <a href=""><img src="https://i.imgur.com/TTImH3o.png" class="w-full" alt=""></a>`;
+      <img src="https://i.imgur.com/TTImH3o.png" class="w-full opacity-60" alt="">`;
   },
 };
 export default banner;

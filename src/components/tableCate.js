@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { getAllCategories, removeCategory } from "../api/categories";
+import { update } from "../api/news";
 import { reRender } from "../utils/rerender";
 
 const tableCate = {
@@ -34,11 +35,11 @@ const tableCate = {
     </td>
     <td class="px-6 py-4 whitespace-nowrap">
       <div class="flex items-center">
-      <form action="" method="post" id="edit-form">
+      <form action="" method="post" class="edit-form">
       <div class="flex">
         <input
-        id="update-name"
-          class="text-sm font-medium text-gray-900 border border-slate-300 rounded-md py-2 pl-9 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+        id=""
+          class="update-name text-sm font-medium text-gray-900 border border-slate-300 rounded-md py-2 pl-9 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
           value="${post.name}">
           <button type="submit" data-id="${post.id}" class="update-btn hidden justify-center ml-3 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cập nhật</button>
       </div>
@@ -94,6 +95,10 @@ const tableCate = {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         button.closest("tr").querySelector(".update-btn").classList.toggle("hidden");
+        document.querySelector(".edit-form").addEventListener("submit", (c) => {
+          c.preventDefault();
+          console.log(document.querySelector(".update-name").value);
+        });
       });
     });
   },

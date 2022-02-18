@@ -70,7 +70,7 @@ const userTable = {
           </div>
       </div>
     </td>
-    <td ${(JSON.parse(localStorage.getItem("user")).id == post.id) ? "hidden" : ""} class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+    <td ${(JSON.parse(localStorage.getItem("user")).id === post.id) ? "hidden" : ""} class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
       <a href="/admin/users/${post.id}/edit" class="edit-btn text-indigo-600 hover:text-indigo-900">Edit</a>
       <button data-id="${post.id}" class="btn btn-remove text-indigo-600 hover:text-indigo-900 font-medium ">Remove</button>
     </td>
