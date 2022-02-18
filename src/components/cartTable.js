@@ -1,4 +1,4 @@
-import { $ } from "../utils";
+import { $, priceLoad } from "../utils";
 import { decreaseItemNumber, increaseItemNumber, removeCartItem } from "../utils/cart";
 import { reRender } from "../utils/rerender";
 
@@ -19,8 +19,8 @@ const cartTable = {
             <tbody>
                 ${cart ? cart.map((item) => /* html */`
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap capitalize"><a href="/productDetail/${item.id}"><h1>${item.name}</h1></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap" class="px-4">${(+item.price).toLocaleString("de-DE", {
+                        <td class="px-6 py-4 whitespace-nowrap capitalize"><a href="#/productDetail/${item.id}"><h1>${item.name}</h1></a></td>
+                        <td class="px-6 py-4 whitespace-nowrap" class="px-4">${priceLoad(item.price, item.discount).toLocaleString("de-DE", {
     style: "currency",
     currency: "VND",
   })}
@@ -51,7 +51,7 @@ const cartTable = {
     let total = 0;
     const totalCount = () => {
       for (const item of cart) {
-        total += (+item.price) * (+item.number);
+        total += (priceLoad(item.price, item.discount)) * (+item.number);
       }
       document.querySelector("#total").innerHTML = total.toLocaleString("de-DE", {
         style: "currency",

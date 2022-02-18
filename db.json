@@ -1,13 +1,6 @@
 {
   "post": [
     {
-      "createdAt": "2022-01-15T01:54:24.955Z",
-      "title": "Tiffany Wisoky",
-      "img": "http://placeimg.com/640/480/cats",
-      "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-      "id": "8"
-    },
-    {
       "createdAt": "2022-01-15T02:36:13.715Z",
       "title": "Mr. Doug Purdy",
       "img": "http://placeimg.com/640/480/nature",
@@ -15,16 +8,14 @@
       "id": "9"
     },
     {
-      "createdAt": "2022-01-14T12:38:27.738Z",
       "title": "bài viết này được đổi",
-      "img": "http://placeimg.com/640/480/nature",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645177738/assigmentJS/yeni22g74w8lx3ml780o.jpg",
       "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
       "id": "10"
     },
     {
-      "createdAt": "2022-01-14T17:58:26.446Z",
-      "title": "Vickie Jast",
-      "img": "http://placeimg.com/640/480/technics",
+      "title": "Vickie Jastf",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645177721/assigmentJS/gmwvnp0bgiopfmu1kc9m.jpg",
       "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
       "id": "11"
     },
@@ -197,14 +188,20 @@
       "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644811415/assigmentJS/sinxtf2y0p8jfugq8qho.png",
       "desc": "ưqeqwe",
       "id": "Z9C4cjy"
+    },
+    {
+      "title": "xsad",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645174817/assigmentJS/gzs86mqgbykd2nb71kij.jpg",
+      "desc": "okkk",
+      "id": "EnUp37e"
     }
   ],
   "users": [
     {
       "email": "manutd0097@gmail.com",
       "password": "$2a$10$Q6ItVvDOZTYLiCV47ZX.ZOxTTdftBb7sdyPSjbpNtTXgkUJ5OR5m.",
-      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644850759/assigmentJS/nba6lot8ba2te1yan6uo.png",
-      "username": "duong",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645177799/assigmentJS/miigzuaeagvay50mnpxf.jpg",
+      "username": "duongd",
       "role": "admin",
       "id": 1
     },
@@ -244,6 +241,14 @@
       "username": "duongdddddddddddddddddddddddddd",
       "role": "member",
       "id": 10
+    },
+    {
+      "email": "duong@gmail.com",
+      "password": "$2a$10$gQGAVKLTSL1NNUi6AMe1VeRLoRCZGYtCGbwedC26lqBR2NLTownKi",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645170496/assigmentJS/aw6e2oy5ec28cbgomwwi.png",
+      "username": "duong",
+      "role": "admin",
+      "id": 11
     }
   ],
   "categories": [
@@ -269,7 +274,8 @@
       "name": "Akko B414",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068864/assigmentJS/hj07otltkhogirhormns.jpg",
       "price": "2000000",
-      "quantity": "5",
+      "discount": 2,
+      "quantity": 5,
       "categoryId": 1,
       "desc": "okk",
       "id": 1
@@ -278,7 +284,8 @@
       "name": "Akko B332",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068902/assigmentJS/ukbfmljqlhkuykpmffkd.png",
       "price": "300000",
-      "quantity": "99",
+      "discount": 33,
+      "quantity": 99,
       "categoryId": 1,
       "desc": "dasdasd",
       "id": 3
@@ -287,7 +294,8 @@
       "name": "edra 5000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
       "price": "100000",
-      "quantity": "3",
+      "discount": 22,
+      "quantity": 3,
       "categoryId": 4,
       "desc": "ddd",
       "id": 4
@@ -296,7 +304,8 @@
       "name": "dareu a87",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
       "price": "390000",
-      "quantity": "2",
+      "discount": 33,
+      "quantity": 2,
       "categoryId": 4,
       "desc": "ddddddddd",
       "id": 5
@@ -305,7 +314,8 @@
       "name": "dareu ek3000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644990701/assigmentJS/mgodgvx2bfhbopmn3fw6.png",
       "price": "400000",
-      "quantity": "4",
+      "discount": 33,
+      "quantity": 4,
       "categoryId": 4,
       "desc": "goood",
       "id": 6
@@ -314,7 +324,8 @@
       "name": "duong",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
       "price": "4000000",
-      "quantity": "99",
+      "discount": 23,
+      "quantity": 99,
       "categoryId": 1,
       "desc": "eeeeeee",
       "id": 7
@@ -323,10 +334,21 @@
       "name": "ban phim4",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085729/assigmentJS/rlnquqfn8ocgr5p3cs9a.jpg",
       "price": "500000",
-      "quantity": "3",
+      "discount": 4,
+      "quantity": 5,
       "categoryId": 3,
       "desc": "ffffffffffff",
       "id": 8
+    },
+    {
+      "name": "ban phim763",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645170797/assigmentJS/w47uqfwhoogvbptpxphl.jpg",
+      "price": "30000",
+      "discount": 44,
+      "quantity": 33,
+      "categoryId": 2,
+      "desc": "33dsadasdasdas",
+      "id": 9
     }
   ]
 }

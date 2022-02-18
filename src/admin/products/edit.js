@@ -52,6 +52,7 @@ const editProducts = {
                 Ảnh
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
+              <img class="imgPreview w-20" src="${productData.data.image}" alt="">
                 <input type="file" name="post-img" id="post-img" class="block w-full text-sm text-slate-500 file:mr-4 
                 file:py-2 file:px-4
                 file:rounded-full file:border-0
@@ -70,6 +71,16 @@ const editProducts = {
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                 <input type="number" value="${productData.data.price}" min="0" max="100000000" step="1000" name="company-website" id="price" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Nhập giá sản phẩm">
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-3 sm:col-span-2">
+              <label for="company-website" class="block text-sm font-medium text-gray-700">
+                Giảm giá
+              </label>
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <input type="number" value="${productData.data.discount}" min="1" max="100" step="1" name="company-website" id="discount" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Nhập phần trăm giảm giá">
               </div>
             </div>
           </div>
@@ -122,6 +133,9 @@ const editProducts = {
     const formAdd = document.querySelector("#form-add");
     const postImg = document.querySelector("#post-img");
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";
+    postImg.addEventListener("change", (e) => {
+      document.querySelector(".imgPreview").src = URL.createObjectURL(e.target.files[0]);
+    });
     const CLOUDINARY_PRESET = "z8ujiqif";
     formAdd.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -144,7 +158,8 @@ const editProducts = {
         name: document.querySelector("#post-name").value,
         image: updateImg,
         price: document.querySelector("#price").value,
-        quantity: document.querySelector("#quantity").value,
+        discount: +document.querySelector("#discount").value,
+        quantity: +document.querySelector("#quantity").value,
         categoryId: +document.querySelector("#category_id").value,
         desc: document.querySelector("#post-desc").value,
       };

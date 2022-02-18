@@ -2,6 +2,7 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { getProduct } from "../api/products";
 import menu from "../components/menu";
+import { priceLoad } from "../utils";
 import { addTocart } from "../utils/cart";
 
 const productDetail = {
@@ -17,10 +18,13 @@ const productDetail = {
     <div class="item-detail">
       <h1>${data.name}</h1>
       <span>Mô tả:<br> ${data.desc}.</span>
-      <h3>${(+data.price).toLocaleString("de-DE", {
+      <h3>${(priceLoad(data.price, data.discount)).toLocaleString("de-DE", {
     style: "currency",
     currency: "VND",
-  })}</h3>
+  })}<span class="text-xl pl-2 text-slate-600 line-through"> ${(+data.price).toLocaleString("de-DE", {
+  style: "currency",
+  currency: "VND",
+})}</span></h3>
         <input type="number" id="inputValue" min="1" value="1" max="99" class="w-fit text-orange-500 bg-transparent border-2 rounded-md border-orange-500">
       <button id="btnBuy">Mua ngay</button>
     </div>

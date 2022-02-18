@@ -64,13 +64,13 @@ header{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .item-box h1{
-  @apply text-2xl font-bold py-2 bg-orange-500 text-white uppercase hover:bg-orange-700
+  @apply text-2xl font-semibold py-2 bg-orange-500 text-white uppercase hover:bg-orange-700
 }
 .item-box p{
   @apply text-sm text-left
 }
 .item-box h3{
-  @apply text-lg font-bold text-orange-500 py-2
+  @apply text-lg font-semibold text-orange-500 py-2
 }
 .item-box button {
   @apply bg-white p-3 rounded-full font-semibold text-orange-500 border-2 border-orange-500
@@ -80,6 +80,9 @@ header{
 }
 .item-box img{
   @apply w-full h-52 object-cover bg-white hover:scale-110 transition duration-500
+}
+.item-box h4{
+  @apply bg-orange-500 absolute z-50 text-white font-light text-xl leading-[50px] text-center w-[50px] h-[50px] rounded-full
 }
 .item-detail{
   @apply text-left flex flex-col justify-center text-white mx-auto

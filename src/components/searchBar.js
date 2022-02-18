@@ -1,4 +1,5 @@
 import { searchProduct } from "../api/products";
+import { priceLoad } from "../utils";
 
 const searchBar = {
   render() {
@@ -21,7 +22,7 @@ const searchBar = {
         document.querySelector(".result").innerHTML = products.data.length > 0 ? products.data.map((product) => `
       <a href="#/productDetail/${product.id}" class="flex items-center p-2">
       <img src="${product.image}" class="w-10 h-10" alt="">
-      <div class="ml-5"><h2 class="font-medium text-2xl capitalize">${product.name}</h2><h2 class="font-medium text-orange-500">Giá: ${product.price.toLocaleString("de-DE", {
+      <div class="ml-5"><h2 class="font-medium text-2xl capitalize">${product.name}</h2><h2 class="font-medium text-orange-500">Giá: ${priceLoad(product.price, product.discount).toLocaleString("de-DE", {
   style: "currency",
   currency: "VND",
 })}</h2></div></a> 

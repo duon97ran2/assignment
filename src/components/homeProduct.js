@@ -1,7 +1,7 @@
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { getProduct } from "../api/products";
-import { $ } from "../utils";
+import { $, priceLoad } from "../utils";
 import { addTocart } from "../utils/cart";
 
 const homeProduct = {
@@ -9,10 +9,11 @@ const homeProduct = {
     return `
     ${data ? data.map((product) => `<div class="item-box">
     <div class="overflow-hidden">
+    <h4>${product.discount}%</h4>
     <a href="#/productDetail/${product.id}"><img src="${product.image}" alt=""></a>
       </div>
       <a href="#/productDetail/${product.id}"><h1>${product.name} </h1></a>
-      <h3>Giá: ${(+product.price).toLocaleString("de-DE", {
+      <h3>Giá: ${priceLoad(product.price, product.discount).toLocaleString("de-DE", {
     style: "currency",
     currency: "VND",
   })}</h3>

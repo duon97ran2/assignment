@@ -43,6 +43,7 @@ const addNews = {
                 Ảnh
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
+              <img class="imgPreview w-20" src="https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc=" alt="">
                 <input type="file"  name="post-img" id="post-img" class="block w-full text-sm text-slate-500 file:mr-4 
                 file:py-2 file:px-4
                 file:rounded-full file:border-0
@@ -84,6 +85,9 @@ const addNews = {
     const imgPost = document.querySelector("#post-img");
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";
     const CLOUDINARY_PRESET = "z8ujiqif";
+    imgPost.addEventListener("change", (e) => {
+      document.querySelector(".imgPreview").src = URL.createObjectURL(e.target.files[0]);
+    });
     formAdd.addEventListener("submit", async (e) => {
       e.preventDefault();
       const file = imgPost.files[0];

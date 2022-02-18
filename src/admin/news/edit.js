@@ -1,3 +1,4 @@
+import axios from "axios";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { get, update } from "../../api/news";
@@ -44,10 +45,15 @@ const newsEdit = {
                 Ảnh
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
-                <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
-                  Img
-                </span>
-                <input type="text" name="company-website" id="post-img" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" value="${data.img}" placeholder="www.example.com">
+              <img class="imgPreview w-20" src="${data.img}" alt="">
+                <input type="file"  name="post-img" id="post-img" class="block w-full text-sm text-slate-500 file:mr-4 
+                file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+              file:bg-violet-50 file:text-violet-700
+              hover:file:bg-violet-100
+                "/>
+                <input type="hidden" id="imageOld" value="${data.img}">
               </div>
             </div>
           </div>
@@ -64,19 +70,6 @@ const newsEdit = {
             </p>
           </div>
 
-          <div>
-            <label class="block text-sm font-medium text-gray-700">
-              Photo
-            </label>
-            <div class="mt-1 flex items-center">
-              <div class="flex-shrink-0 h-10 w-10">
-              <img class="h-10 w-10 rounded-full" src="${data.img}" alt="">
-              </div>
-              <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Change
-              </button>
-            </div>
-          </div>
         </div>
         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
           <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -93,11 +86,32 @@ const newsEdit = {
   },
   afterRender(id) {
     const formUpdate = document.querySelector("#form-update");
-    formUpdate.addEventListener("submit", (e) => {
+    const imgPost = document.querySelector("#post-img");
+    const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";
+    const CLOUDINARY_PRESET = "z8ujiqif";
+    imgPost.addEventListener("change", (e) => {
+      document.querySelector(".imgPreview").src = URL.createObjectURL(e.target.files[0]);
+    });
+    formUpdate.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const file = imgPost.files[0];
+      let updateImage;
+      if (file) {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", CLOUDINARY_PRESET);
+        const { data } = await axios.post(CLOUDINARY_API, formData, {
+          headers: {
+            "content-type": "application/x-www-formencoded",
+          },
+        });
+        updateImage = data.url;
+      } else {
+        updateImage = document.querySelector("#imageOld").value;
+      }
       const postUpdate = {
         title: document.querySelector("#post-name").value,
-        img: document.querySelector("#post-img").value,
+        img: updateImage,
         desc: document.querySelector("#post-desc").value,
       };
       update(postUpdate, id).then(() => {
