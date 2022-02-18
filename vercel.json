@@ -79,6 +79,10 @@
       {
           "src": "/search",
           "dest": "/"
+      },
+      {
+          "src": "/cart",
+          "dest": "/"
       }
   ]
 }
