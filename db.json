@@ -9,7 +9,7 @@
     },
     {
       "title": "bài viết này được đổi",
-      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645177738/assigmentJS/yeni22g74w8lx3ml780o.jpg",
+      "img": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645178066/assigmentJS/rltwglxi7zcawwdmxfmd.png",
       "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
       "id": "10"
     },
@@ -210,14 +210,16 @@
       "password": "$2a$10$mJnrZd2xUCWF5XqbhLvQvOWrJKI90a.2LfzKg35pcEejhf4KUDvDG",
       "username": "d",
       "role": "member",
-      "id": 2
+      "id": 2,
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645178653/assigmentJS/wbfdsnwfsvmc8pl0mn58.jpg"
     },
     {
       "email": "manutd0034@gmail.com",
       "password": "$2a$10$5BblfCG2i0mjGh543DXgoeoXYJTOmdSUYIWh4ZLVtUJVjzvd6C2Eq",
       "username": "dddddddddddd",
       "role": "member",
-      "id": 3
+      "id": 3,
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645178675/assigmentJS/cybeaxngtp2jqksxf81t.jpg"
     },
     {
       "email": "manutd009d7@gmail.com",
