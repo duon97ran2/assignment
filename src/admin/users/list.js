@@ -46,6 +46,7 @@ const userList = {
 </div>`;
   },
   afterRender() {
+    Nav.afterRender();
     userTable.afterRender();
   },
 };

@@ -3,37 +3,51 @@ import { reRender } from "../utils/rerender";
 const menu = {
   render() {
     return /* html */` <div class="menu__bar z-50">
-    <div class="logo">
+    <div class="logo col-start-1">
     <a href="/#"><span>KEYBOARD.vn</span></a>
     </div>
-    <ul class="flex capitalize">
-      <li><a href="/#" class="nav-item__link">Trang chủ</a></li>
+    <ul class="flex capitalize col-span-2 place-content-center gap-x-6">
+      <li><a href="/#" class="nav-item__link link-active">Trang chủ</a></li>
       <li><a href="/#san-pham" class="nav-item__link">Sản phẩm</a></li>
       <li><a href="/#chuong-trinh-dao-tao" class="nav-item__link">Khuyến mãi</a></li>
       <li><a href="/#tin-tuc" class="nav-item__link">Tin tức</a></li>
-      ${localStorage.getItem("user") ? `
-      <div class="dropdown">
-      <li class=""><a href="/#" class="nav-item__link text-center" id="user-name"><i class="fa fa-user" aria-hidden="true"></i> Đăng nhập</a>
-      <div class="sub-menu">
-      <ul>
-      <div class="square">
-      </div>
+    </ul>
+    <ul class="flex col-start-4 place-content-end">
+      <li class="relative"><a href="/#" class="nav-item__link text-center " id="user-name" ><i class="fa fa-user" aria-hidden="true"></i></a><div class="dropdown">
+      <div class="sub-menu min-w-[120px]">
+        <div class="square">
+        </div><ul>
+        ${localStorage.getItem("user") ? `
+            <li><a href="/#admin/dashboard">Hồ sơ</a></li>
             <li><a href="/#admin/dashboard">Quản trị</a></li>
             <li id="sign-out"><a href="">Đăng xuất</a></li>
-          </ul>
-        </div>
-      </li></div>` : "<li><a href=\"/#signin\" class=\"nav-item__link text-center\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> Đăng nhập</a></li>"}
-      <li><a href="/#cart" class="nav-item__link"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Giỏ
-          hàng</a></li>
-    </ul>
+          ` : `<li><a href="/#signin">Đăng nhập</a></li>
+          <li><a href="/#signup">Đăng ký</a></li>`}</ul>
+      </div>
+      </div></li>
+      <li><a href="/#cart" title="Giỏ hàng" class="nav-item__link"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li></ul>
   </div>`;
   },
   afterRender() {
     const username = document.querySelector("#user-name");
     const signout = document.querySelector("#sign-out");
+    const links = document.querySelectorAll(".nav-item__link");
+    links.forEach((link) => {
+      const hrefValue = link.getAttribute("href");
+      if (hrefValue != "/#") {
+        const regex = new RegExp(hrefValue, "g");
+        const linkPage = `/${window.location.hash}`;
+        console.log(regex);
+        console.log(window.location.hash);
+        if (linkPage.match(regex)) {
+          links[0].classList.remove("link-active");
+          link.classList.add("link-active");
+        }
+      }
+    });
     if (username) {
-      username.innerHTML = `<i class="fa  fa-user" aria-hidden="true"></i> <span  title=" ${JSON.parse(localStorage.getItem("user")).username}">${JSON.parse(localStorage.getItem("user")).username}
-      <span>`;
+      username.innerHTML = `<span href="/#" title=" ${JSON.parse(localStorage.getItem("user")).username}">${JSON.parse(localStorage.getItem("user")).username}
+      </span>`;
     }
     if (signout) {
       signout.addEventListener("click", () => {

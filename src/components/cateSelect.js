@@ -37,7 +37,7 @@ const cateSelect = {
         <div class="space-y-6">
         ${categories.data.map((category) => `
           <div class="flex items-center">
-            <input id="filter-mobile-category-0" name="category[]" data-id="${category.id}" value="new-arrivals" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+            <input id="filter-mobile-category-0" name="category[]" checked data-id="${category.id}" value="new-arrivals" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
             <label for="filter-mobile-category-0" class="ml-3 min-w-0 flex-1 text-gray-500"> ${category.name} </label>
           </div>
         `).join("")}
@@ -65,17 +65,21 @@ const cateSelect = {
     });
     let products = [];
     const checkList = document.querySelectorAll("input[name='category[]']");
-    checkList.forEach(async (item) => {
+    const loadProduct = async (item) => {
       const { id } = item.dataset;
       const categoryProducts = await getCategoryProducts(id);
-      item.addEventListener("change", () => {
-        if (item.checked) {
-          products.push(categoryProducts.data);
-        } else {
-          products = products.filter((product) => product.id !== categoryProducts.data.id);
-        }
-        document.querySelector("#productList").innerHTML = products.map((product) => `${homeProduct.render(product.products)}`).join("");
-        homeProduct.afterRender();
+      if (item.checked) {
+        products.push(categoryProducts.data);
+      } else {
+        products = products.filter((product) => product.id !== categoryProducts.data.id);
+      }
+      document.querySelector("#productList").innerHTML = products.map((product) => `${homeProduct.render(product.products)}`).join("");
+      homeProduct.afterRender();
+    };
+    checkList.forEach((checkbox) => {
+      loadProduct(checkbox);
+      checkbox.addEventListener("change", (e) => {
+        loadProduct(e.target);
       });
     });
   },

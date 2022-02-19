@@ -12,15 +12,11 @@ const Nav = {
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/#admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"  aria-current="page">Dashboard</a>
-
-                <a href="/#admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" >News</a>
-
-                <a href="/#admin/categories" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categories</a>
-
-                <a href="/#admin/products" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Products</a>
-
-                <a href="/#admin/users" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Users</a>
+                <a href="/#admin/dashboard" class=" admin-link">Dashboard</a>
+                <a href="/#admin/news" class="admin-link" >News</a>
+                <a href="/#admin/categories" class="admin-link">Categories</a>
+                <a href="/#admin/products" class="admin-link">Products</a>
+                <a href="/#admin/users" class="admin-link">Users</a>
               </div>
             </div>
           </div>
@@ -131,6 +127,19 @@ const Nav = {
       </div>
     </nav>
     `;
+  },
+  afterRender() {
+    const links = document.querySelectorAll(".admin-link");
+    links.forEach((link) => {
+      const linkAttr = link.getAttribute("href");
+      if (linkAttr != "/#") {
+        const regex = new RegExp(linkAttr, "g");
+        const pageLink = `/${window.location.hash}`;
+        if (pageLink.match(regex)) {
+          link.classList.add("nav-active");
+        }
+      }
+    });
   },
 };
 export default Nav;

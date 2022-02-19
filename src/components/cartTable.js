@@ -6,14 +6,14 @@ const cartTable = {
   render() {
     const cart = JSON.parse(localStorage.getItem("cart"));
     return `
-    <table class="min-w-full divide-y divide-gray-200 table-auto " id="table-post">
-            <thead class="bg-gray-50">
+    <table class="min-w-full divide-y divide-gray-200 table-auto rounded-md overflow-hidden" id="table-post">
+            <thead class="bg-orange-500">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tên sản phẩm</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Giá</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Số lượng</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Tên sản phẩm</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Giá</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Số lượng</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider"></th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider"></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +40,6 @@ const cartTable = {
                     </tr>
                 `).join("") : "<tr><td class=\"px-6 py-4 whitespace-nowrap\" colspan=\"2\" class=\"text-right\">Không có sản phẩm nào</td></tr>"}
             </tbody>
-            <tfoot>
-                <tr><td class="px-6 py-4 whitespace-nowrap" colspan="2" class="text-right">Tổng là: <span id="total">null</span></td></tr>
-            </tfoot>
         </table>`;
   },
   afterRender() {
@@ -57,6 +54,7 @@ const cartTable = {
         style: "currency",
         currency: "VND",
       });
+      document.querySelector("#price-total").value = total;
     };
     totalCount();
     btns.forEach((btn) => {

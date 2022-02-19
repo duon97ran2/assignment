@@ -50,6 +50,7 @@ const cateLIst = {
 </div>`;
   },
   afterRender() {
+    Nav.afterRender();
     const addBtn = document.querySelector("#add-btn");
     const formAdd = document.querySelector("#form-add");
     addBtn.addEventListener("click", (e) => {

@@ -105,6 +105,7 @@ const addUsers = {
 `;
   },
   afterRender() {
+    Nav.afterRender();
     const formAdd = document.querySelector("#form-add");
     const avatar = document.querySelector("#post-img");
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";

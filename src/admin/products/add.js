@@ -129,6 +129,7 @@ const addProducts = {
 `;
   },
   afterRender() {
+    Nav.afterRender();
     const formAdd = document.querySelector("#form-add");
     const postImg = document.querySelector("#post-img");
     postImg.addEventListener("change", (e) => {

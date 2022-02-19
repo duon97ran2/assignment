@@ -25,5 +25,8 @@ const DashBoard = {
 
           `;
   },
+  afterRender() {
+    Nav.afterRender();
+  },
 };
 export default DashBoard;

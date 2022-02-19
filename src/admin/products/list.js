@@ -46,6 +46,7 @@ const productList = {
 </div>`;
   },
   afterRender() {
+    Nav.afterRender();
     productTable.afterRender();
   },
 };

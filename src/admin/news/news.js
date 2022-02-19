@@ -88,6 +88,7 @@ const News = {
     `;
   },
   afterRender() {
+    Nav.afterRender();
     const buttons = document.querySelectorAll(".btn-remove");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {

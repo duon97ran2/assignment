@@ -1,7 +1,6 @@
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
-import { getAllCategories, removeCategory } from "../api/categories";
-import { update } from "../api/news";
+import { getAllCategories, removeCategory, updateCategory } from "../api/categories";
 import { reRender } from "../utils/rerender";
 
 const tableCate = {
@@ -35,13 +34,13 @@ const tableCate = {
     </td>
     <td class="px-6 py-4 whitespace-nowrap">
       <div class="flex items-center">
-      <form action="" method="post" class="edit-form">
+      <form action="" method="post" class="edit-form"  data-id="${post.id}">
       <div class="flex">
         <input
         id=""
-          class="update-name text-sm font-medium text-gray-900 border border-slate-300 rounded-md py-2 pl-9 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+          class="update-name text-sm font-medium text-gray-900 border border-slate-300 rounded-md py-2 pl-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
           value="${post.name}">
-          <button type="submit" data-id="${post.id}" class="update-btn hidden justify-center ml-3 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cập nhật</button>
+          <button type="submit" class="update-btn hidden justify-center ml-3 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cập nhật</button>
       </div>
       
     </form>
@@ -60,6 +59,7 @@ const tableCate = {
   afterRender() {
     const removeBtns = document.querySelectorAll(".btn-remove");
     const editBtns = document.querySelectorAll(".edit-btn");
+    const forms = document.querySelectorAll(".edit-form");
     removeBtns.forEach((button) => {
       button.addEventListener("click", () => {
         const { id } = button.dataset;
@@ -95,9 +95,20 @@ const tableCate = {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         button.closest("tr").querySelector(".update-btn").classList.toggle("hidden");
-        document.querySelector(".edit-form").addEventListener("submit", (c) => {
-          c.preventDefault();
-          console.log(document.querySelector(".update-name").value);
+      });
+    });
+    forms.forEach((form) => {
+      form.addEventListener("submit", (e) => {
+        const { id } = form.dataset;
+        e.preventDefault();
+        updateCategory({
+          name: e.target.querySelector(".update-name").value,
+        }, id).then(() => {
+          Swal.fire("Cập nhật thành công", "Danh mục đã được cập nhật", "success");
+        }).then(() => {
+          reRender(tableCate, "#table-post");
+        }).catch((error) => {
+          Swal.fire("Cập nhật thất bại", error.response.data, "error");
         });
       });
     });

@@ -255,20 +255,24 @@
   ],
   "categories": [
     {
-      "id": 1,
-      "name": "Akko"
+      "name": "Akko",
+      "id": 1
     },
     {
       "id": 2,
       "name": "Leopold"
     },
     {
-      "name": "Edra",
+      "name": "E-dra",
       "id": 3
     },
     {
       "name": "DareU",
       "id": 4
+    },
+    {
+      "name": "Fulhen",
+      "id": 5
     }
   ],
   "products": [
@@ -351,6 +355,250 @@
       "categoryId": 2,
       "desc": "33dsadasdasdas",
       "id": 9
+    }
+  ],
+  "orders": [
+    {
+      "ordercode": "rhdwO",
+      "buyer": "duong",
+      "address": "hanoi",
+      "phonenumber": "0369131397",
+      "total": "12266500",
+      "status": "1",
+      "products": [
+        {
+          "name": "Akko B332",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068902/assigmentJS/ukbfmljqlhkuykpmffkd.png",
+          "price": "300000",
+          "discount": 33,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "dasdasd",
+          "id": 3,
+          "number": 4
+        },
+        {
+          "name": "ban phim4",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085729/assigmentJS/rlnquqfn8ocgr5p3cs9a.jpg",
+          "price": "500000",
+          "discount": 4,
+          "quantity": 5,
+          "categoryId": 3,
+          "desc": "ffffffffffff",
+          "id": 8,
+          "number": 5
+        },
+        {
+          "name": "ban phim763",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645170797/assigmentJS/w47uqfwhoogvbptpxphl.jpg",
+          "price": "30000",
+          "discount": 44,
+          "quantity": 33,
+          "categoryId": 2,
+          "desc": "33dsadasdasdas",
+          "id": 9,
+          "number": 4
+        },
+        {
+          "name": "duong",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
+          "price": "4000000",
+          "discount": 23,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "eeeeeee",
+          "id": 7,
+          "number": 2
+        },
+        {
+          "name": "dareu ek3000",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644990701/assigmentJS/mgodgvx2bfhbopmn3fw6.png",
+          "price": "400000",
+          "discount": 33,
+          "quantity": 4,
+          "categoryId": 4,
+          "desc": "goood",
+          "id": 6,
+          "number": 2
+        },
+        {
+          "name": "Akko B414",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068864/assigmentJS/hj07otltkhogirhormns.jpg",
+          "price": "2000000",
+          "discount": 2,
+          "quantity": 5,
+          "categoryId": 1,
+          "desc": "okk",
+          "id": 1,
+          "number": 1
+        },
+        {
+          "name": "edra 5000",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
+          "price": "100000",
+          "discount": 22,
+          "quantity": 3,
+          "categoryId": 4,
+          "desc": "ddd",
+          "id": 4,
+          "number": 1
+        },
+        {
+          "name": "dareu a87",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
+          "price": "390000",
+          "discount": 33,
+          "quantity": 2,
+          "categoryId": 4,
+          "desc": "ddddddddd",
+          "id": 5,
+          "number": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "ordercode": "fIoKN",
+      "buyer": "tran anh duong",
+      "address": "hanoi",
+      "phonenumber": "0369131397",
+      "total": "15747200",
+      "status": "1",
+      "products": [
+        {
+          "name": "Akko B332",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068902/assigmentJS/ukbfmljqlhkuykpmffkd.png",
+          "price": "300000",
+          "discount": 33,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "dasdasd",
+          "id": 3,
+          "number": 4
+        },
+        {
+          "name": "ban phim4",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085729/assigmentJS/rlnquqfn8ocgr5p3cs9a.jpg",
+          "price": "500000",
+          "discount": 4,
+          "quantity": 5,
+          "categoryId": 3,
+          "desc": "ffffffffffff",
+          "id": 8,
+          "number": 5
+        },
+        {
+          "name": "ban phim763",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645170797/assigmentJS/w47uqfwhoogvbptpxphl.jpg",
+          "price": "30000",
+          "discount": 44,
+          "quantity": 33,
+          "categoryId": 2,
+          "desc": "33dsadasdasdas",
+          "id": 9,
+          "number": 4
+        },
+        {
+          "name": "duong",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
+          "price": "4000000",
+          "discount": 23,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "eeeeeee",
+          "id": 7,
+          "number": 4
+        },
+        {
+          "name": "edra 5000",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
+          "price": "100000",
+          "discount": 22,
+          "quantity": 3,
+          "categoryId": 4,
+          "desc": "ddd",
+          "id": 4,
+          "number": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "ordercode": "redaR",
+      "buyer": "tran anh duong",
+      "address": "hanoi",
+      "phonenumber": "0369131397",
+      "total": 279000,
+      "status": 1,
+      "products": [
+        {
+          "name": "Akko B332",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068902/assigmentJS/ukbfmljqlhkuykpmffkd.png",
+          "price": "300000",
+          "discount": 33,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "dasdasd",
+          "id": 3,
+          "number": 1
+        },
+        {
+          "name": "edra 5000",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
+          "price": "100000",
+          "discount": 22,
+          "quantity": 3,
+          "categoryId": 4,
+          "desc": "ddd",
+          "id": 4,
+          "number": 1
+        }
+      ],
+      "id": 3
+    },
+    {
+      "ordercode": "ao4Gv",
+      "buyer": "tran anh duong",
+      "address": "hanoi",
+      "phonenumber": "0369131397",
+      "total": 2440200,
+      "status": 1,
+      "products": [
+        {
+          "name": "Akko B332",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068902/assigmentJS/ukbfmljqlhkuykpmffkd.png",
+          "price": "300000",
+          "discount": 33,
+          "quantity": 99,
+          "categoryId": 1,
+          "desc": "dasdasd",
+          "id": 3,
+          "number": 5
+        },
+        {
+          "name": "edra 5000",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
+          "price": "100000",
+          "discount": 22,
+          "quantity": 3,
+          "categoryId": 4,
+          "desc": "ddd",
+          "id": 4,
+          "number": 5
+        },
+        {
+          "name": "dareu a87",
+          "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
+          "price": "390000",
+          "discount": 33,
+          "quantity": 2,
+          "categoryId": 4,
+          "desc": "ddddddddd",
+          "id": 5,
+          "number": 4
+        }
+      ],
+      "id": 4
     }
   ]
 }
