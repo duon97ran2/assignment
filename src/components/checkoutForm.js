@@ -1,8 +1,8 @@
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { addOrder } from "../api/orders";
+import cartList from "../pages/cart";
 import { reRender } from "../utils/rerender";
-import cartTable from "./cartTable";
 
 const checkoutForm = {
   render() {
@@ -30,7 +30,7 @@ const checkoutForm = {
         <input type="hidden" id="price-total">
         <input type="hidden" id="status" value="1">
     </div>
-    <button id="checkoutBtn" type="submit">Thanh toán</button>
+    <button id="checkoutBtn" class="${localStorage.getItem("cart") ? "" : "hidden"}" type="submit">Thanh toán</button>
     </form>
     `;
   },
@@ -51,6 +51,7 @@ const checkoutForm = {
         ordercode: makeid(5),
         buyer: document.querySelector("#name").value,
         address: document.querySelector("#address").value,
+        email: document.querySelector("#email").value,
         phonenumber: document.querySelector("#phone-number").value,
         total: +document.querySelector("#price-total").value,
         status: +document.querySelector("#status").value,
@@ -60,7 +61,7 @@ const checkoutForm = {
         toastr.success("Thanh toán thành công");
         localStorage.removeItem("cart");
       }).then(() => {
-        reRender(cartTable, "#table-post");
+        reRender(cartList, "#app");
       }).catch((error) => {
         toastr.error(error.response.data);
       });

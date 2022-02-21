@@ -3,6 +3,8 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { getUser, updateUser } from "../../api/users";
 import Nav from "../../components/nav";
+import userTable from "../../components/userTable";
+import { reRender } from "../../utils/rerender";
 
 const editUsers = {
   async render(id) {
@@ -13,7 +15,7 @@ const editUsers = {
                 <h1 class="text-3xl font-bold text-gray-900">
                   Cập nhật người dùng
                 </h1>
-                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/users" role="button">Danh sách người dùng</a>
+                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/#admin/users" role="button">Danh sách người dùng</a>
               </div>
               
     </header>
@@ -130,9 +132,9 @@ const editUsers = {
       updateUser(newUser, id).then(() => {
         toastr.success("Cập nhật người dùng thành công");
         setTimeout(() => {
-          document.location.href = "/admin/users";
+          document.location.href = "/#admin/users";
         }, 2000);
-      }).catch((error) => {
+      }).then(reRender(userTable, "#table-post")).catch((error) => {
         toastr.error(error.response.data);
       });
     });

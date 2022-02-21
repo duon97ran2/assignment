@@ -4,6 +4,7 @@ import { getProduct } from "../api/products";
 import menu from "../components/menu";
 import { priceLoad } from "../utils";
 import { addTocart } from "../utils/cart";
+import { reRender } from "../utils/rerender";
 
 const productDetail = {
   async render(id) {
@@ -39,6 +40,7 @@ const productDetail = {
       const { data } = await getProduct(id);
       addTocart({ ...data, number: +inputValue.value }, () => {
         toastr.success("Thêm vào giỏ thành công");
+        reRender(menu, ".menu__bar");
       });
     });
   },

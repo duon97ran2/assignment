@@ -100,7 +100,7 @@ const productTable = {
       </div>
     </td>
     <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
-      <a href="/admin/products/${post.id}/edit" class="edit-btn text-indigo-600 hover:text-indigo-900">Edit</a>
+      <a href="/#admin/products/${post.id}/edit" class="edit-btn text-indigo-600 hover:text-indigo-900">Edit</a>
       <button data-id="${post.id}" class="btn btn-remove text-indigo-600 hover:text-indigo-900 font-medium">Remove</button>
     </td>
   </tr>

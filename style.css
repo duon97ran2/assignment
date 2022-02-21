@@ -138,6 +138,9 @@ header{
 .nav-active{
   @apply bg-gray-900 text-white
 }
+.cart-number{
+  @apply w-4 h-4 bg-orange-500 absolute text-white flex items-center justify-center rounded-full top-0 text-xs -right-1/2
+}
 /* .cate1 img{
   @apply object-cover w-full
 }

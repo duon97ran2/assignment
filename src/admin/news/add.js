@@ -3,6 +3,8 @@ import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { add } from "../../api/news";
 import Nav from "../../components/nav";
+import { reRender } from "../../utils/rerender";
+import News from "./news";
 
 const addNews = {
   render() {
@@ -13,7 +15,7 @@ const addNews = {
                 <h1 class="text-3xl font-bold text-gray-900">
                   Thêm bài viết
                 </h1>
-                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/news" role="button">Danh sách bài viết</a>
+                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/#admin/news" role="button">Danh sách bài viết</a>
               </div>
               
     </header>
@@ -111,14 +113,13 @@ const addNews = {
           title: "Thành công",
           text: "Đã thêm bài viết!",
         });
-        window.location.replace("/admin/news");
-      }).catch(() => {
+        document.location.href = "/#admin/news";
+      }).then(() => { reRender(News, "#app"); }).catch(() => {
         Swal.fire({
           icon: "error",
           title: "Thất bại",
           text: "Chưa thể thêm bài viết!",
         });
-        window.location.reload(true);
       });
     });
   },

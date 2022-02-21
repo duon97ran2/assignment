@@ -3,6 +3,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import { getAll, remove } from "../../api/news";
 import adHeader from "../../components/adheader";
 import Nav from "../../components/nav";
+import { reRender } from "../../utils/rerender";
 // import { reRender } from "../../utils/rerender";
 
 const News = {
@@ -69,7 +70,7 @@ const News = {
                 Admin
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                <a href="/#admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                 <button data-id="${post.id}" class="btn btn-remove text-indigo-600 hover:text-indigo-900 font-medium">Remove</button>
               </td>
             </tr>
@@ -109,11 +110,12 @@ const News = {
                 "Your file has been deleted.",
                 "success",
               );
-              window.location.reload(true);
-              // reRender(News, "#table-post");
-            }).catch(() => {
-              window.alert("Xóa thất bại");
-              window.location.reload(true);
+            }).then(() => { reRender(News, "#app"); }).catch((error) => {
+              Swal.fire(
+                "Xóa thất bại!",
+                error.response.data,
+                "success",
+              );
             });
           }
         });

@@ -3,6 +3,8 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { addUser } from "../../api/users";
 import Nav from "../../components/nav";
+import userTable from "../../components/userTable";
+import { reRender } from "../../utils/rerender";
 
 const addUsers = {
   async render() {
@@ -12,7 +14,7 @@ const addUsers = {
                 <h1 class="text-3xl font-bold text-gray-900">
                   Thêm người dùng
                 </h1>
-                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/products" role="button">Danh sách người dùng</a>
+                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/#admin/users" role="button">Danh sách người dùng</a>
               </div>
               
     </header>
@@ -110,6 +112,7 @@ const addUsers = {
     const avatar = document.querySelector("#post-img");
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";
     const CLOUDINARY_PRESET = "z8ujiqif";
+    let imgLink;
     avatar.addEventListener("change", (e) => {
       document.querySelector(".imgPreview").src = URL.createObjectURL(e.target.files[0]);
     });
@@ -119,14 +122,17 @@ const addUsers = {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("upload_preset", CLOUDINARY_PRESET);
-      const { data } = await axios.post(CLOUDINARY_API, formData, {
-        headers: {
-          "content-type": "application/x-www-formencoded",
-        },
-      });
+      if (file) {
+        const { data } = await axios.post(CLOUDINARY_API, formData, {
+          headers: {
+            "content-type": "application/x-www-formencoded",
+          },
+        });
+        imgLink = data.url;
+      }
       const newUser = {
         email: document.querySelector("#email-address").value,
-        avatar: data.url,
+        avatar: imgLink,
         username: document.querySelector("#username").value,
         password: document.querySelector("#password").value,
         role: document.querySelector("#role").value,
@@ -134,9 +140,9 @@ const addUsers = {
       addUser(newUser).then(() => {
         toastr.success("Thêm người dùng thành công");
         setTimeout(() => {
-          document.location.href = "/admin/users";
+          document.location.href = "/#admin/users";
         }, 2000);
-      }).catch((error) => {
+      }).then(reRender(userTable, "#table-post")).catch((error) => {
         toastr.error(error.response.data);
       });
     });

@@ -18,14 +18,16 @@ const menu = {
         <div class="square">
         </div><ul>
         ${localStorage.getItem("user") ? `
-            <li><a href="/#admin/dashboard">Hồ sơ</a></li>
+            <li><a href="/#profile">Hồ sơ</a></li>
             <li><a href="/#admin/dashboard">Quản trị</a></li>
             <li id="sign-out"><a href="">Đăng xuất</a></li>
           ` : `<li><a href="/#signin">Đăng nhập</a></li>
           <li><a href="/#signup">Đăng ký</a></li>`}</ul>
       </div>
       </div></li>
-      <li><a href="/#cart" title="Giỏ hàng" class="nav-item__link"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li></ul>
+      <li><a href="/#cart" title="Giỏ hàng" class="nav-item__link relative"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><div class="cart-number">${JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")).length : 0}</div></a>
+      
+      </li></ul>
   </div>`;
   },
   afterRender() {
@@ -37,8 +39,6 @@ const menu = {
       if (hrefValue != "/#") {
         const regex = new RegExp(hrefValue, "g");
         const linkPage = `/${window.location.hash}`;
-        console.log(regex);
-        console.log(window.location.hash);
         if (linkPage.match(regex)) {
           links[0].classList.remove("link-active");
           link.classList.add("link-active");

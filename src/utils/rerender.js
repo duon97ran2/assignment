@@ -1,6 +1,6 @@
-export const reRender = async (component, dom) => {
+export const reRender = async (component, dom, id) => {
   if (component) {
-    document.querySelector(dom).innerHTML = await component.render();
-    component.afterRender();
+    document.querySelector(dom).innerHTML = await component.render(id);
+    component.afterRender(id);
   }
 };

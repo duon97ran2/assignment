@@ -17,6 +17,7 @@ const Nav = {
                 <a href="/#admin/categories" class="admin-link">Categories</a>
                 <a href="/#admin/products" class="admin-link">Products</a>
                 <a href="/#admin/users" class="admin-link">Users</a>
+                <a href="/#admin/orders" class="admin-link">Orders</a>
               </div>
             </div>
           </div>

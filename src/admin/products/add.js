@@ -4,6 +4,8 @@ import "toastr/build/toastr.min.css";
 import { addProduct } from "../../api/products";
 import Nav from "../../components/nav";
 import { getAllCategories } from "../../api/categories";
+import productTable from "../../components/productTable";
+import { reRender } from "../../utils/rerender";
 
 const addProducts = {
   async loadSelectCate() {
@@ -19,7 +21,7 @@ const addProducts = {
                 <h1 class="text-3xl font-bold text-gray-900">
                   Thêm sản phẩm
                 </h1>
-                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/users" role="button">Danh sách sản phẩm</a>
+                <a name="" id="" class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="#admin/products" role="button">Danh sách sản phẩm</a>
               </div>
               
     </header>
@@ -160,8 +162,10 @@ const addProducts = {
       addProduct(newProduct).then(() => {
         toastr.success("Thêm sản phẩm thành công");
         setTimeout(() => {
-          document.location.href = "/admin/products";
+          document.location.href = "/#admin/products";
         }, 2000);
+      }).then(() => {
+        reRender(productTable, "#table-post");
       }).catch((error) => {
         toastr.error(error.response.data);
       });

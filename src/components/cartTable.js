@@ -1,3 +1,4 @@
+import cartList from "../pages/cart";
 import { $, priceLoad } from "../utils";
 import { decreaseItemNumber, increaseItemNumber, removeCartItem } from "../utils/cart";
 import { reRender } from "../utils/rerender";
@@ -66,11 +67,11 @@ const cartTable = {
           });
         } else if (btn.classList.contains("decrease")) {
           decreaseItemNumber(id, () => {
-            reRender(cartTable, "#table-post");
+            reRender(cartList, "#app");
           });
         } else if (btn.classList.contains("remove")) {
           removeCartItem(id, () => {
-            reRender(cartTable, "#table-post");
+            reRender(cartList, "#app");
           });
         }
       });

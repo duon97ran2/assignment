@@ -3,6 +3,8 @@ import "toastr/build/toastr.min.css";
 import { getProduct } from "../api/products";
 import { $, priceLoad } from "../utils";
 import { addTocart } from "../utils/cart";
+import { reRender } from "../utils/rerender";
+import menu from "./menu";
 
 const homeProduct = {
   render(data) {
@@ -30,6 +32,7 @@ const homeProduct = {
           const { data } = await getProduct(id);
           addTocart({ ...data, number: 1 }, () => {
             toastr.success("Thêm sản phẩm thành công");
+            reRender(menu, ".menu");
           });
         });
       }

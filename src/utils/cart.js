@@ -4,9 +4,13 @@ import "sweetalert2/dist/sweetalert2.min.css";
 let cart = [];
 if (localStorage.getItem("cart")) {
   cart = JSON.parse(localStorage.getItem("cart"));
+} else {
+  cart = [];
 }
-
 export const addTocart = (newProduct, next) => {
+  if (!localStorage.getItem("cart")) {
+    cart = [];
+  }
   const existProduct = cart.find((product) => product.id === +newProduct.id);
   if (!existProduct) {
     cart.push(newProduct);
@@ -35,7 +39,11 @@ export const removeCartItem = (id, next) => {
   }).then((result) => {
     if (result.isConfirmed) {
       cart = cart.filter((item) => item.id !== +id);
-      localStorage.setItem("cart", JSON.stringify(cart));
+      if (cart.length > 0) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      } else {
+        localStorage.removeItem("cart");
+      }
       Swal.fire(
         "Xoá thành công",
         "Sản phẩm đã được xóa khỏi giỏ",
@@ -59,6 +67,10 @@ export const decreaseItemNumber = (id, next) => {
   if (currentItem.number < 1) {
     removeCartItem(id, () => { next(); });
   }
-  localStorage.setItem("cart", JSON.stringify(cart));
+  if (cart.length > 0) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    localStorage.removeItem("cart");
+  }
   next();
 };

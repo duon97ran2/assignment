@@ -21,6 +21,9 @@ import editUsers from "./admin/users/edit";
 import productDetail from "./pages/productDetail";
 import cartList from "./pages/cart";
 import productPage from "./pages/product";
+import orderList from "./admin/orders/list";
+import orderDetail from "./admin/orders/orderDetail";
+import profilePage from "./pages/profile";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 // router.on("/",function(){
@@ -61,6 +64,9 @@ router.on(
     "/tin-tuc": () => {
       print(NewsPage);
     },
+    "/profile": () => {
+      print(profilePage);
+    },
     "/tin-tuc/:id": ({ data }) => {
       const { id } = data;
       print(NewsDetail, id);
@@ -95,6 +101,13 @@ router.on(
     },
     "/admin/users": () => {
       print(userList);
+    },
+    "/admin/orders": () => {
+      print(orderList);
+    },
+    "/admin/orders/:id/detail": ({ data }) => {
+      const { id } = data;
+      print(orderDetail, id);
     },
     "/admin/news/add": () => {
       print(addNews);
