@@ -230,20 +230,39 @@ const orderDetail = {
     });
     document.querySelector("#form-add").addEventListener("submit", async (e) => {
       e.preventDefault();
-      let newNumber = 0;
+      const newNumber = 0;
       let newTotal = 0;
       const productSelectId = +document.querySelector("#product-select").value;
-      const number = +document.querySelector("#number").value;
+      const numberSelected = +document.querySelector("#number").value;
       const selectedProduct = await getProduct(productSelectId);
       const existedProduct = products.find((product) => product.id === productSelectId);
       if (existedProduct) {
-        newNumber += (data.number + number);
         // eslint-disable-next-line max-len
-        newTotal += data.total + priceLoad(selectedProduct.data.price, selectedProduct.data.discount) * newNumber;
-        updateOrder({ number: newNumber, total: newTotal }, id).then(() => { reRender(orderDetail, "#app", id); }).then(() => {
+        newTotal += data.total + priceLoad(selectedProduct.data.price, selectedProduct.data.discount) * numberSelected;
+        existedProduct.number += numberSelected;
+        // eslint-disable-next-line object-shorthand
+        updateOrder({ products: products, total: newTotal }, id).then(() => { reRender(orderDetail, "#app", id); }).then(() => {
           Swal.fire({
-            title: "Xoá thành công",
-            text: "Sản phẩm bị xóa khỏi đơn",
+            title: "Thêm sản phẩm thành công",
+            text: "Sản phẩm đã được thêm vào đơn",
+            icon: "success",
+          });
+        }).catch((error) => {
+          Swal.fire({
+            title: "Thêm thất bại",
+            text: error.response.data,
+            icon: "error",
+          });
+        });
+      } else {
+        products.push({ ...selectedProduct.data, number: numberSelected });
+        console.log(products);
+        newTotal += (data.total + priceLoad(selectedProduct.data.price, selectedProduct.data.discount) * numberSelected);
+        // eslint-disable-next-line object-shorthand
+        updateOrder({ products: products, total: newTotal }, id).then(() => { reRender(orderDetail, "#app", id); }).then(() => {
+          Swal.fire({
+            title: "Thêm thành công",
+            text: "Sản phẩm được thêm vào đơn hàng",
             icon: "success",
           });
         }).catch((error) => {
@@ -253,23 +272,6 @@ const orderDetail = {
             icon: "success",
           });
         });
-      } else {
-        newProducts = products;
-        newTotal += (data.total + priceLoad(selectedProduct.data.price, selectedProduct.data.discount) * number);
-        // console.log(selectedProduct);
-        // updateOrder({ number, total: newTotal }, id).then(() => { reRender(orderDetail, "#app", id); }).then(() => {
-        //   Swal.fire({
-        //     title: "Xoá thành công",
-        //     text: "Sản phẩm bị xóa khỏi đơn",
-        //     icon: "success",
-        //   });
-        // }).catch((error) => {
-        //   Swal.fire({
-        //     title: "Thêm thất bại",
-        //     text: error.response.data,
-        //     icon: "success",
-        //   });
-        // });
       }
 
       // console.log(productSelect.options[productSelect.selectedIndex]);

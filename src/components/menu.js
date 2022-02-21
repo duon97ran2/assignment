@@ -4,7 +4,7 @@ const menu = {
   render() {
     return /* html */` <div class="menu__bar z-50">
     <div class="logo col-start-1">
-    <a href="/#"><span>KEYBOARD.vn</span></a>
+    <a href="/#"><span class="">KEYBOARD.vn</span></a>
     </div>
     <ul class="flex capitalize col-span-2 place-content-center gap-x-6">
       <li><a href="/#" class="nav-item__link link-active">Trang chủ</a></li>

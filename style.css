@@ -6,6 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
 .nav-item__link{
   @apply whitespace-nowrap block py-2 mx-3	 text-white hover:underline underline-offset-2;
 }
@@ -106,10 +112,10 @@ header{
   @apply absolute top-1/4 left-1/2 translate-x-[-50%]
 }
 .search-bar h1{
-  @apply font-black text-7xl text-white mt-2  drop-shadow-2xl h-fit w-full text-center
+  @apply font-black text-6xl text-white mt-2  drop-shadow-2xl h-fit w-full text-center
 }
 .search-bar h1 span{
-  @apply text-orange-500 
+  @apply text-[80px] bg-gradient-to-bl from-orange-500 to-red-600 text-transparent bg-clip-text
 }
 .result{
   @apply max-h-56 overflow-y-auto 

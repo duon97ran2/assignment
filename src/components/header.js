@@ -9,7 +9,7 @@ const Header = {
     ${menu.render()} 
     </div>
     <div class="search-bar z-50">
-      <h1>WELCOME TO <span>KEYBOARD.vn</span></h1>
+      <h1>WELCOME TO <span class="">KEYBOARD.vn</span></h1>
       <div class="m-10 rounded-md overflow-hidden">
       ${searchBar.render()} 
        </div>
