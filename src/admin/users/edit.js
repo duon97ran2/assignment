@@ -1,6 +1,8 @@
 import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
 import { getUser, updateUser } from "../../api/users";
 import Nav from "../../components/nav";
 import userTable from "../../components/userTable";
@@ -65,7 +67,7 @@ const editUsers = {
               Username
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
-                <input type="text" name="company-website" id="username" value="${userData.data.username}" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Tên đăng nhập">
+                <input type="text" name="username" id="username" value="${userData.data.username}" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded sm:text-sm border-gray-300" placeholder="Tên đăng nhập">
               </div>
             </div>
           </div>
@@ -99,44 +101,66 @@ const editUsers = {
   },
   afterRender(id) {
     Nav.afterRender();
-    const formEdit = document.querySelector("#form-edit");
+    const formEdit = $("#form-edit");
     const avatar = document.querySelector("#post-img");
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duongtaph13276/image/upload";
     const CLOUDINARY_PRESET = "z8ujiqif";
     avatar.addEventListener("change", (e) => {
       document.querySelector(".imgPreview").src = URL.createObjectURL(e.target.files[0]);
     });
-    formEdit.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const file = avatar.files[0];
-      let updateAvatar;
-      if (file) {
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("upload_preset", CLOUDINARY_PRESET);
-        const { data } = await axios.post(CLOUDINARY_API, formData, {
-          headers: {
-            "content-type": "application/x-www-formencoded",
-          },
-        });
-        updateAvatar = data.url;
-      } else {
-        updateAvatar = document.querySelector("#imageOld").value;
-      }
-      const newUser = {
-        email: document.querySelector("#email-address").value,
-        avatar: updateAvatar,
-        username: document.querySelector("#username").value,
-        role: document.querySelector("#role").value,
-      };
-      updateUser(newUser, id).then(() => {
-        toastr.success("Cập nhật người dùng thành công");
-        setTimeout(() => {
-          document.location.href = "/#admin/users";
-        }, 2000);
-      }).then(reRender(userTable, "#table-post")).catch((error) => {
-        toastr.error(error.response.data);
-      });
+    formEdit.validate({
+      rules: {
+        email: {
+          required: true,
+          email: true,
+        },
+        username: {
+          required: true,
+          maxlength: 16,
+          minlength: 8,
+        },
+      },
+      messages: {
+        username: {
+          required: "Không được để trống",
+          maxlength: "Không quá 16  kí tự",
+          minlength: "Không dưới 8  kí tự",
+        },
+      },
+      submitHandler: () => {
+        const formEditSubmit = async () => {
+          const file = avatar.files[0];
+          let updateAvatar;
+          if (file) {
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", CLOUDINARY_PRESET);
+            const { data } = await axios.post(CLOUDINARY_API, formData, {
+              headers: {
+                "content-type": "application/x-www-formencoded",
+              },
+            });
+            updateAvatar = data.url;
+          } else {
+            updateAvatar = document.querySelector("#imageOld").value;
+          }
+          const newUser = {
+            email: document.querySelector("#email-address").value,
+            avatar: updateAvatar,
+            username: document.querySelector("#username").value,
+            role: document.querySelector("#role").value,
+          };
+          updateUser(newUser, id).then(() => {
+            toastr.success("Cập nhật người dùng thành công");
+            setTimeout(() => {
+              document.location.href = "/#admin/users";
+            }, 2000);
+          }).then(reRender(userTable, "#table-post")).catch((error) => {
+            toastr.error(error.response.data);
+          });
+        };
+        formEditSubmit();
+      },
     });
   },
 };

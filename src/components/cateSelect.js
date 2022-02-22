@@ -67,11 +67,6 @@ const cateSelect = {
     const checkList = document.querySelectorAll("input[name='category[]']");
     const loadProduct = async (item) => {
       const productId = item.dataset.id;
-      if (id) {
-        if (productId !== id) {
-          item.classList.remove("checked");
-        }
-      }
       const categoryProducts = await getCategoryProducts(productId);
       if (item.checked) {
         products.push(categoryProducts.data);

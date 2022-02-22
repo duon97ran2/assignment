@@ -12,6 +12,12 @@
   -webkit-box-orient: vertical;  
   overflow: hidden;
 }
+.mt-1.flex{
+  @apply flex-col
+}
+label.error {
+  @apply text-red-600 rounded-sm mt-2 font-semibold  
+}
 .nav-item__link{
   @apply whitespace-nowrap block py-2 mx-3	 text-white hover:underline underline-offset-2;
 }

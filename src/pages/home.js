@@ -5,7 +5,6 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import homeProduct from "../components/homeProduct";
 import productSlide from "../components/swiper";
-import { reRender } from "../utils/rerender";
 
 const Homepage = {
   async render() {

@@ -137,7 +137,7 @@
     {
       "email": "manutd0097@gmail.com",
       "password": "$2a$10$SaEYHss2c3q4mxDfMNOa.uvmgGr9qqFUNhA.s3mCQLKm2K93WoSRW",
-      "username": "duong",
+      "username": "",
       "role": "admin",
       "id": 11,
       "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645341627/assigmentJS/tlgwycixvx6wowezndyz.jpg"
@@ -146,9 +146,16 @@
       "email": "manutd00972@gmail.com",
       "password": "$2a$10$CwnTgCquEPW8bLr6i3HeDeL4CY2y2DYd/0GR71qMFQqHQLFaUZ.oK",
       "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645412240/assigmentJS/lcsh0fr7ievnrvx7bsxl.jpg",
-      "username": "222",
+      "username": "sadasdxzczx",
       "role": "admin",
       "id": 12
+    },
+    {
+      "email": "manutd009d7@gmail.com",
+      "password": "$2a$10$GQnO9Od7GZn8GBbRg5DXJe.aeDtph3f4mLkPn0A.gnvMgBcOSsg4K",
+      "username": "d21",
+      "role": "member",
+      "id": 13
     }
   ],
   "categories": [
@@ -180,10 +187,10 @@
   ],
   "products": [
     {
-      "name": "Akko B414",
+      "name": "asdas",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068864/assigmentJS/hj07otltkhogirhormns.jpg",
       "price": "2000000",
-      "discount": 14,
+      "discount": 20,
       "quantity": 5,
       "categoryId": 1,
       "desc": "okk",
@@ -193,7 +200,7 @@
       "name": "edra 5000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
       "price": "100000",
-      "discount": 12,
+      "discount": 23,
       "quantity": 3,
       "categoryId": 4,
       "desc": "ddd",
@@ -203,7 +210,7 @@
       "name": "dareu a87",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
       "price": "390000",
-      "discount": 20,
+      "discount": 23,
       "quantity": 2,
       "categoryId": 2,
       "desc": "ddddddddd",
@@ -213,7 +220,7 @@
       "name": "dareu ek3000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644990701/assigmentJS/mgodgvx2bfhbopmn3fw6.png",
       "price": "400000",
-      "discount": 18,
+      "discount": 23,
       "quantity": 4,
       "categoryId": 4,
       "desc": "goood",
@@ -223,7 +230,7 @@
       "name": "duong",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
       "price": "4000000",
-      "discount": 16,
+      "discount": 22,
       "quantity": 99,
       "categoryId": 1,
       "desc": "eeeeeee",
@@ -233,7 +240,7 @@
       "name": "Fulen m87x",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645339431/assigmentJS/f8iao7arv7lvxlq5ffmt.jpg",
       "price": "20000",
-      "discount": 18,
+      "discount": 10,
       "quantity": 22,
       "categoryId": 5,
       "desc": "asdasdasdddd",
@@ -243,7 +250,7 @@
       "name": "Keykron k2",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495663/assigmentJS/heakev8nu6zya5gqmrwy.jpg",
       "price": "500000",
-      "discount": 22,
+      "discount": 23,
       "quantity": 4,
       "categoryId": 2,
       "desc": "Good Keyboard",
@@ -253,7 +260,7 @@
       "name": "Macgee 6500",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495778/assigmentJS/vxxxlyjvcywaqlkf5pah.jpg",
       "price": "500000",
-      "discount": 19,
+      "discount": 16,
       "quantity": 21,
       "categoryId": 4,
       "desc": "very good",
@@ -263,11 +270,21 @@
       "name": "Aula Abcxyz",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495843/assigmentJS/sqsuqbeinan5ia8zpu4j.png",
       "price": "6000000",
-      "discount": 16,
+      "discount": 12,
       "quantity": 21,
       "categoryId": 2,
       "desc": "Nice keyboard",
       "id": 13
+    },
+    {
+      "name": "keykron 2",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645520648/assigmentJS/yzyez67x3err2rq397ww.jpg",
+      "price": "30000",
+      "discount": 2,
+      "quantity": 100,
+      "categoryId": 5,
+      "desc": "sdadasd",
+      "id": 14
     }
   ],
   "orders": [

@@ -12,7 +12,7 @@ export const getRandomInt = (min, max) => {
 };
 export const discountChange = async () => {
   const { data } = await getAllProducts();
-  data.forEach((item) => {
+  data.slice(0, 1).forEach((item) => {
     changeProduct({ discount: getRandomInt(10, 25) }, item.id);
   });
 };

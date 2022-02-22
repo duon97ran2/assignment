@@ -30,11 +30,11 @@ const coundown = {
       document.querySelector(".hour").innerHTML = "00";
       document.querySelector(".minute").innerHTML = textMinute.toLocaleString("en-US", { minimumIntegerDigits: 2 });
       document.querySelector(".second").innerHTML = textSecond.toLocaleString("en-US", { minimumIntegerDigits: 2 });
-      if (textSecond / 60 === 0) {
-        discountChange().then(() => {
-          reRender(productSlide, ".swiper");
-        });
-      }
+      // if (textSecond / 60 === 0) {
+      //   discountChange().then(() => {
+      //     reRender(productSlide, ".swiper");
+      //   });
+      // }
     };
     setInterval(timecount(), 1000);
     setInterval(() => { reRender(coundown, ".container"); }, 1000);
