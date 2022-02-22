@@ -154,23 +154,28 @@
   "categories": [
     {
       "name": "Akko",
-      "id": 1
+      "id": 1,
+      "image": "https://thuanbui.me/wp-content/uploads/2020/03/ban-phim-co-la-gi-1200x740.jpeg"
     },
     {
       "id": 2,
-      "name": "Leopold"
+      "name": "Leopold",
+      "image": "https://images.unsplash.com/photo-1613297252595-a0d18450d85a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1lY2hhbmljYWwlMjBrZXlib2FyZHxlbnwwfHwwfHw%3D&w=1000&q=80"
     },
     {
       "name": "E-dra",
-      "id": 3
+      "id": 3,
+      "image": "https://miro.medium.com/max/1200/0*j784LOsLsjAy-m4k"
     },
     {
       "name": "DareU",
-      "id": 4
+      "id": 4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFeSqAvb1gQuspYICuPCIMZnV2GvVrKplTgA2q3GWAaVD2aMoBz7gVJepnvA_aQey2dRA&usqp=CAU"
     },
     {
       "name": "Fulhen",
-      "id": 5
+      "id": 5,
+      "image": "https://miro.medium.com/max/1200/0*mik7EvPyHA4CXswT."
     }
   ],
   "products": [
@@ -178,7 +183,7 @@
       "name": "Akko B414",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068864/assigmentJS/hj07otltkhogirhormns.jpg",
       "price": "2000000",
-      "discount": 2,
+      "discount": 14,
       "quantity": 5,
       "categoryId": 1,
       "desc": "okk",
@@ -188,7 +193,7 @@
       "name": "edra 5000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
       "price": "100000",
-      "discount": 22,
+      "discount": 12,
       "quantity": 3,
       "categoryId": 4,
       "desc": "ddd",
@@ -198,7 +203,7 @@
       "name": "dareu a87",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
       "price": "390000",
-      "discount": 33,
+      "discount": 20,
       "quantity": 2,
       "categoryId": 2,
       "desc": "ddddddddd",
@@ -208,7 +213,7 @@
       "name": "dareu ek3000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644990701/assigmentJS/mgodgvx2bfhbopmn3fw6.png",
       "price": "400000",
-      "discount": 33,
+      "discount": 18,
       "quantity": 4,
       "categoryId": 4,
       "desc": "goood",
@@ -218,7 +223,7 @@
       "name": "duong",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
       "price": "4000000",
-      "discount": 23,
+      "discount": 16,
       "quantity": 99,
       "categoryId": 1,
       "desc": "eeeeeee",
@@ -228,11 +233,41 @@
       "name": "Fulen m87x",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645339431/assigmentJS/f8iao7arv7lvxlq5ffmt.jpg",
       "price": "20000",
-      "discount": 22,
+      "discount": 18,
       "quantity": 22,
       "categoryId": 5,
       "desc": "asdasdasdddd",
       "id": 10
+    },
+    {
+      "name": "Keykron k2",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495663/assigmentJS/heakev8nu6zya5gqmrwy.jpg",
+      "price": "500000",
+      "discount": 22,
+      "quantity": 4,
+      "categoryId": 2,
+      "desc": "Good Keyboard",
+      "id": 11
+    },
+    {
+      "name": "Macgee 6500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495778/assigmentJS/vxxxlyjvcywaqlkf5pah.jpg",
+      "price": "500000",
+      "discount": 19,
+      "quantity": 21,
+      "categoryId": 4,
+      "desc": "very good",
+      "id": 12
+    },
+    {
+      "name": "Aula Abcxyz",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495843/assigmentJS/sqsuqbeinan5ia8zpu4j.png",
+      "price": "6000000",
+      "discount": 16,
+      "quantity": 21,
+      "categoryId": 2,
+      "desc": "Nice keyboard",
+      "id": 13
     }
   ],
   "orders": [

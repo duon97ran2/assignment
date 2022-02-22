@@ -56,7 +56,7 @@ const cateSelect = {
     `;
   },
 
-  afterRender() {
+  afterRender(id) {
     document.querySelector("#show").addEventListener("click", () => {
       document.querySelector("#filter-section-mobile-1").classList.remove("hidden");
     });
@@ -66,8 +66,13 @@ const cateSelect = {
     let products = [];
     const checkList = document.querySelectorAll("input[name='category[]']");
     const loadProduct = async (item) => {
-      const { id } = item.dataset;
-      const categoryProducts = await getCategoryProducts(id);
+      const productId = item.dataset.id;
+      if (id) {
+        if (productId !== id) {
+          item.classList.remove("checked");
+        }
+      }
+      const categoryProducts = await getCategoryProducts(productId);
       if (item.checked) {
         products.push(categoryProducts.data);
       } else {

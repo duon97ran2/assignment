@@ -1,7 +1,7 @@
 import instance from "./instance";
 
 export const getAllProducts = () => {
-  const url = "/products";
+  const url = "/products?_sort=id&_order=desc";
   return instance.get(url);
 };
 export const getProduct = (id) => {
@@ -15,6 +15,10 @@ export const addProduct = (post) => {
 export const updateProduct = (post, id) => {
   const url = `/products/${id}`;
   return instance.put(url, post);
+};
+export const changeProduct = (post, id) => {
+  const url = `/products/${id}`;
+  return instance.patch(url, post);
 };
 export const removeProduct = (id) => {
   const url = `/products/${id}`;

@@ -55,7 +55,11 @@ router.on(
     "": () => {
       print(Homepage);
     },
-    "/san-pham": () => {
+    "/san-pham/:id": ({ data }) => {
+      const { id } = data;
+      print(productPage, id);
+    },
+    "/san-pham/": () => {
       print(productPage);
     },
     "/chuong-trinh-dao-tao": () => {

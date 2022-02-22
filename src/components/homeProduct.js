@@ -9,7 +9,7 @@ import menu from "./menu";
 const homeProduct = {
   render(data) {
     return `
-    ${data ? data.map((product) => `<div class="item-box">
+    ${data ? data.map((product) => `<div class="item-box swiper-slide">
     <div class="overflow-hidden">
     <h4>${product.discount}%</h4>
     <a href="#/productDetail/${product.id}"><img src="${product.image}" alt=""></a>

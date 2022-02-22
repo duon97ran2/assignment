@@ -3,9 +3,9 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 const productPage = {
-  async render() {
+  async render(id) {
     return `${Header.render()}
-    ${await cateSelect.render()}
+    ${await cateSelect.render(id)}
     ${Footer.render()}`;
   },
   afterRender() {
