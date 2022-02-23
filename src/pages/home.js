@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import homeProduct from "../components/homeProduct";
 import productSlide from "../components/swiper";
+import { reRender } from "../utils/rerender";
 
 const Homepage = {
   async render() {
@@ -39,6 +40,7 @@ const Homepage = {
     Header.afterRender();
     productSlide.afterRender();
     homeProduct.afterRender();
+    setInterval(() => { reRender(coundown, ".container"); }, 1000);
   },
 };
 export default Homepage;

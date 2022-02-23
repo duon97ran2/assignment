@@ -190,7 +190,7 @@
       "name": "asdas",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068864/assigmentJS/hj07otltkhogirhormns.jpg",
       "price": "2000000",
-      "discount": 20,
+      "discount": 22,
       "quantity": 5,
       "categoryId": 1,
       "desc": "okk",
@@ -200,7 +200,7 @@
       "name": "edra 5000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645068950/assigmentJS/g7va6f88dm1rxh7gje7w.jpg",
       "price": "100000",
-      "discount": 23,
+      "discount": 24,
       "quantity": 3,
       "categoryId": 4,
       "desc": "ddd",
@@ -210,7 +210,7 @@
       "name": "dareu a87",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645069013/assigmentJS/mlodmgtxfvhqlu2hzwm7.png",
       "price": "390000",
-      "discount": 23,
+      "discount": 16,
       "quantity": 2,
       "categoryId": 2,
       "desc": "ddddddddd",
@@ -220,7 +220,7 @@
       "name": "dareu ek3000",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644990701/assigmentJS/mgodgvx2bfhbopmn3fw6.png",
       "price": "400000",
-      "discount": 23,
+      "discount": 12,
       "quantity": 4,
       "categoryId": 4,
       "desc": "goood",
@@ -230,7 +230,7 @@
       "name": "duong",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645085056/assigmentJS/jbnzsjqa6t0y9bqvar6u.jpg",
       "price": "4000000",
-      "discount": 22,
+      "discount": 11,
       "quantity": 99,
       "categoryId": 1,
       "desc": "eeeeeee",
@@ -250,7 +250,7 @@
       "name": "Keykron k2",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495663/assigmentJS/heakev8nu6zya5gqmrwy.jpg",
       "price": "500000",
-      "discount": 23,
+      "discount": 18,
       "quantity": 4,
       "categoryId": 2,
       "desc": "Good Keyboard",
@@ -260,9 +260,9 @@
       "name": "Macgee 6500",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495778/assigmentJS/vxxxlyjvcywaqlkf5pah.jpg",
       "price": "500000",
-      "discount": 16,
+      "discount": 11,
       "quantity": 21,
-      "categoryId": 4,
+      "categoryId": 3,
       "desc": "very good",
       "id": 12
     },
@@ -270,7 +270,7 @@
       "name": "Aula Abcxyz",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645495843/assigmentJS/sqsuqbeinan5ia8zpu4j.png",
       "price": "6000000",
-      "discount": 12,
+      "discount": 11,
       "quantity": 21,
       "categoryId": 2,
       "desc": "Nice keyboard",
@@ -280,11 +280,61 @@
       "name": "keykron 2",
       "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645520648/assigmentJS/yzyez67x3err2rq397ww.jpg",
       "price": "30000",
-      "discount": 2,
+      "discount": 11,
       "quantity": 100,
       "categoryId": 5,
       "desc": "sdadasd",
       "id": 14
+    },
+    {
+      "name": "Edra k500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645534215/assigmentJS/t761ieyqquodkyblwddv.jpg",
+      "price": "30000",
+      "discount": 8,
+      "quantity": 100,
+      "categoryId": 3,
+      "desc": "123123",
+      "id": 15
+    },
+    {
+      "name": "Edra k500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645534215/assigmentJS/t761ieyqquodkyblwddv.jpg",
+      "price": "30000",
+      "discount": 16,
+      "quantity": 100,
+      "categoryId": 3,
+      "desc": "123123",
+      "id": 16
+    },
+    {
+      "name": "Edra k500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645534215/assigmentJS/t761ieyqquodkyblwddv.jpg",
+      "price": "30000",
+      "discount": 23,
+      "quantity": 100,
+      "categoryId": 3,
+      "desc": "123123",
+      "id": 17
+    },
+    {
+      "name": "Edra k500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645534215/assigmentJS/t761ieyqquodkyblwddv.jpg",
+      "price": "30000",
+      "discount": 15,
+      "quantity": 100,
+      "categoryId": 3,
+      "desc": "123123",
+      "id": 18
+    },
+    {
+      "name": "Edra k500",
+      "image": "http://res.cloudinary.com/duongtaph13276/image/upload/v1645534215/assigmentJS/t761ieyqquodkyblwddv.jpg",
+      "price": "30000",
+      "discount": 21,
+      "quantity": 100,
+      "categoryId": 3,
+      "desc": "123123",
+      "id": 19
     }
   ],
   "orders": [
@@ -777,6 +827,71 @@
         }
       ],
       "id": 18
+    }
+  ],
+  "comments": [
+    {
+      "content": "ddddddddddddddddddddddddddddd",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 7,
+      "status": 1,
+      "id": 1
+    },
+    {
+      "content": null,
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 10,
+      "status": 1,
+      "id": 3
+    },
+    {
+      "content": "dddddddddddddddddddddddddddddddddddd",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 10,
+      "status": 1,
+      "id": 4
+    },
+    {
+      "content": "ddddddddddddddddddddddddddd",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 10,
+      "status": 1,
+      "id": 5
+    },
+    {
+      "content": "aaaaaaaaaaaaaaa",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 1,
+      "status": 1,
+      "id": 8
+    },
+    {
+      "content": "dddddddddddddddddddd",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 1,
+      "status": 1,
+      "id": 9
+    },
+    {
+      "content": "aaaaaaaaaaaaaadd",
+      "userId": 7,
+      "username": "admin",
+      "avatar": "http://res.cloudinary.com/duongtaph13276/image/upload/v1644848610/assigmentJS/cqkfsh9byci7s8hc9l3o.png",
+      "productId": 1,
+      "status": 1,
+      "id": 10
     }
   ]
 }

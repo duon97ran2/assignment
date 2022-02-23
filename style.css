@@ -12,6 +12,15 @@
   -webkit-box-orient: vertical;  
   overflow: hidden;
 }
+input[type="number"]#inputValue{
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]#inputValue::-webkit-inner-spin-button, 
+input[type=number]#inputValue::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
 .mt-1.flex{
   @apply flex-col
 }
@@ -100,10 +109,10 @@ header{
   @apply bg-orange-500 absolute z-50 text-white font-light text-xl leading-[50px] text-center w-[50px] h-[50px] rounded-full
 }
 .item-detail{
-  @apply text-left flex flex-col justify-center text-white mx-auto
+  @apply text-left flex flex-col justify-center text-slate-600 mx-auto
 }
 .item-detail h1{
-  @apply text-4xl font-bold uppercase mb-3
+  @apply text-4xl font-bold uppercase mb-3 
 }
 .item-detail h3{
   @apply text-3xl font-bold text-orange-500 py-2
@@ -112,7 +121,7 @@ header{
   @apply bg-orange-500 rounded-md p-3 font-semibold text-2xl text-white
 }
 .item-detail button{
-  @apply bg-transparent border-2 w-fit border-orange-500 rounded-md p-3 font-semibold text-2xl text-orange-500 mt-5
+  @apply bg-transparent border-2 w-fit border-orange-500 rounded-md p-3 font-semibold text-2xl text-orange-500
 }
 .search-bar{
   @apply absolute top-1/3 left-1/2 translate-x-[-50%]
@@ -155,6 +164,10 @@ header{
 .cart-number{
   @apply w-4 h-4 bg-orange-500 absolute text-white flex items-center justify-center rounded-full top-0 text-xs -right-1/2
 }
+.compost{
+  @apply w-full
+}
+
 /* .cate1 img{
   @apply object-cover w-full
 }

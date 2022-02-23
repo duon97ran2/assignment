@@ -45,7 +45,7 @@ const menu = {
         }
       }
     });
-    if (username) {
+    if (localStorage.getItem("user")) {
       username.innerHTML = `<span href="/#" title=" ${JSON.parse(localStorage.getItem("user")).username}">${JSON.parse(localStorage.getItem("user")).username}
       </span>`;
     }

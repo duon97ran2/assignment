@@ -5,7 +5,7 @@ export const getAllProducts = () => {
   return instance.get(url);
 };
 export const getProduct = (id) => {
-  const url = `/products/${id}`;
+  const url = `/products/${id}?_embed=comments`;
   return instance.get(url);
 };
 export const addProduct = (post) => {
@@ -26,5 +26,9 @@ export const removeProduct = (id) => {
 };
 export const searchProduct = (keyword) => {
   const url = `/products?q=${keyword}`;
+  return instance.get(url);
+};
+export const getProductDiscount = () => {
+  const url = "products?_sort=discount&_order=asc";
   return instance.get(url);
 };

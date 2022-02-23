@@ -1,6 +1,7 @@
 import cateSelect from "../components/cateSelect";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import pagination from "../components/pagination";
 
 const productPage = {
   async render(id) {

@@ -2,7 +2,7 @@ import { getAllCategories, getCategoryProducts } from "../api/categories";
 import homeProduct from "./homeProduct";
 
 const cateSelect = {
-  async render() {
+  async render(id) {
     const categories = await getAllCategories();
     return /* html */`
     <div class="grid grid-cols-4">
@@ -35,12 +35,17 @@ const cateSelect = {
       <!-- Filter section, show/hide based on section state. -->
       <div class="pt-6" id="filter-section-mobile-1">
         <div class="space-y-6">
-        ${categories.data.map((category) => `
+        ${id ? categories.data.map((category) => `
           <div class="flex items-center">
-            <input id="filter-mobile-category-0" name="category[]" checked data-id="${category.id}" value="new-arrivals" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+            <input id="filter-mobile-category-0" name="category[]" ${category.id === +id ? "checked" : ""} data-id="${category.id}" value="new-arrivals" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
             <label for="filter-mobile-category-0" class="ml-3 min-w-0 flex-1 text-gray-500"> ${category.name} </label>
           </div>
-        `).join("")}
+        `).join("") : categories.data.map((category) => `
+        <div class="flex items-center">
+          <input id="filter-mobile-category-0" name="category[]"checked  data-id="${category.id}" value="new-arrivals" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+          <label for="filter-mobile-category-0" class="ml-3 min-w-0 flex-1 text-gray-500"> ${category.name} </label>
+        </div>
+      `).join("")}
           
         </div>
       </div>

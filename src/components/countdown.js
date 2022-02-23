@@ -37,7 +37,6 @@ const coundown = {
       // }
     };
     setInterval(timecount(), 1000);
-    setInterval(() => { reRender(coundown, ".container"); }, 1000);
   },
 };
 export default coundown;

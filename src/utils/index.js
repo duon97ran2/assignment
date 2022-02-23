@@ -1,4 +1,4 @@
-import { changeProduct, getAllProducts } from "../api/products";
+import { changeProduct, getProductDiscount } from "../api/products";
 
 export const $ = (element) => {
   const selectors = document.querySelectorAll(element);
@@ -11,8 +11,8 @@ export const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 };
 export const discountChange = async () => {
-  const { data } = await getAllProducts();
-  data.slice(0, 1).forEach((item) => {
-    changeProduct({ discount: getRandomInt(10, 25) }, item.id);
+  const { data } = await getProductDiscount();
+  data.slice(0, 4).forEach((item) => {
+    changeProduct({ discount: getRandomInt(15, 25) }, item.id);
   });
 };

@@ -36,6 +36,7 @@ const productSlide = {
       loop: true,
       spaceBetween: 10,
       modules: [Pagination, Navigation],
+      autoplay: true,
       // If we need pagination
       pagination: {
         el: ".swiper-pagination",
