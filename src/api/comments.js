@@ -4,6 +4,10 @@ export const getAllComments = () => {
   const url = "/comments";
   return instance.get(url);
 };
+export const getCommentByProduct = (id) => {
+  const url = `/comments/?productId=${id}`;
+  return instance.get(url);
+};
 export const getComment = (id) => {
   const url = `/comments/${id}`;
   return instance.get(url);

@@ -1,7 +1,7 @@
 import instance from "./instance";
 
 export const getAllProducts = () => {
-  const url = "/products";
+  const url = "/products?_embed=comments";
   return instance.get(url);
 };
 export const getProduct = (id) => {

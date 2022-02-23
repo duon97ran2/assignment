@@ -24,6 +24,8 @@ import productPage from "./pages/product";
 import orderList from "./admin/orders/list";
 import orderDetail from "./admin/orders/orderDetail";
 import profilePage from "./pages/profile";
+import commentList from "./admin/comments/list";
+import commentDetail from "./pages/commentDetail";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 // router.on("/",function(){
@@ -108,6 +110,13 @@ router.on(
     },
     "/admin/orders": () => {
       print(orderList);
+    },
+    "/admin/comments": () => {
+      print(commentList);
+    },
+    "/admin/comments/:id/detail": ({ data }) => {
+      const { id } = data;
+      print(commentDetail, id);
     },
     "/admin/orders/:id/detail": ({ data }) => {
       const { id } = data;
